@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_140941) do
+ActiveRecord::Schema.define(version: 2020_02_29_144849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "box_lessons", force: :cascade do |t|
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.integer "capacity"
+    t.string "status"
+    t.bigint "box_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_box_lessons_on_box_id"
+  end
+
+  create_table "boxes", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.string "box_url"
+    t.string "photos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_boxes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_02_29_140941) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "box_lessons", "boxes"
 end
