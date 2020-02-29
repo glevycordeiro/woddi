@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_110507) do
+ActiveRecord::Schema.define(version: 2020_02_29_145733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "status"
+    t.bigint "box_lesson_id"
+    t.string "student_first_name"
+    t.string "student_last_name"
+    t.string "student_email"
+    t.string "student_phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_lesson_id"], name: "index_bookings_on_box_lesson_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "box_lessons", force: :cascade do |t|
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.integer "capacity"
+    t.string "status"
+    t.bigint "box_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_box_lessons_on_box_id"
+  end
+
+  create_table "boxes", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.string "box_url"
+    t.string "photos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_boxes_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "description"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +69,18 @@ ActiveRecord::Schema.define(version: 2020_02_29_110507) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.string "avatar"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "dob"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "box_lessons"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "box_lessons", "boxes"
+  add_foreign_key "reviews", "bookings"
 end
