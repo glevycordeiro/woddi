@@ -15,12 +15,16 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'cloudinary', '~> 1.12.0'
+gem 'geocoder'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
