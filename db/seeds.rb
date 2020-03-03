@@ -73,7 +73,8 @@ end
 
 puts "Creating bookings..."
 
-booking_1 = Booking.create(user_id: User.all.sample, status: "Active", box_lesson: BoxLesson.all.sample, student_first_name: "Margarida", student_email: "margarida@gmail.com", student_phone: "912345678", student_last_name: "Pascoal")
+
+booking_1 = Booking.create(user: User.all.sample, status: "Active", box_lesson: BoxLesson.all.sample, student_first_name: "Margarida", student_email: "margarida@gmail.com", student_phone: "912345678", student_last_name: "Pascoal")
 booking_2 = Booking.create(user: User.all.sample, status: "Pending", box_lesson: BoxLesson.all.sample, student_first_name: "Filipe", student_email: "filipe@gmail.com", student_phone: "912345679", student_last_name: "Costa")
 booking_3 = Booking.create(user: User.all.sample, status: "Checked-in", box_lesson: BoxLesson.all.sample, student_first_name: "Paulo", student_email: "paulo@gmail.com", student_phone: "912345648", student_last_name: "Pita")
 booking_4 = Booking.create(user: User.all.sample, status: "Checked-in", box_lesson: BoxLesson.all.sample, student_first_name: "Gustavo", student_email: "gustavo@gmail.com", student_phone: "912343678", student_last_name: "Leite")
