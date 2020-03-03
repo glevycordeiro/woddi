@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :box_lesson
   has_one :box, through: :box_lesson
-  has_one :review
+  has_one :review, dependent: :destroy
 
   # after_create :update_capacity
   # validate :is_sold_out?
