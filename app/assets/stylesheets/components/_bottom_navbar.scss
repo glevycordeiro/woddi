@@ -1,0 +1,33 @@
+// mobile bottom shortcut navbar
+​ .flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+  #bottom-nav {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    padding: 0;
+    box-shadow: -1px 0px 1px 1px gray;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: white;
+    bottom: 0px;
+    z-index: 99;
+  }
+​
+  #bottom-nav, #bottom-list {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+  }
+​
+  #bottom-list, li {
+    flex-grow: 1;
+    padding: 5px 0;
+    i {
+      color:grey;
+    }
+  }
+
