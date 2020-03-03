@@ -5,4 +5,8 @@ class Box < ApplicationRecord
   has_many :box_lessons, dependent: :destroy
   has_many :bookings, through: :box_lessons
   has_many :reviews, through: :bookings
+
+  def avg_review
+    self.reviews.average(:rating)
+  end
 end
