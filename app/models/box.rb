@@ -7,6 +7,11 @@ class Box < ApplicationRecord
   has_many :reviews, through: :bookings
 
   def avg_review
-    self.reviews.average(:rating)
+    avg = self.reviews.average(:rating)
+    if avg.nil?
+      "n/a"
+    else
+      avg.round
+    end
   end
 end

@@ -1,11 +1,33 @@
 class BoxesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :map]
 
   def index
     if params[:query].present?
       @boxes = policy_scope(Box.where("title ILIKE ?", "%#{params[:query]}%"))
     else
       @boxes = policy_scope(Box).all
+    end
+
+    @boxes = Box.geocoded #returns flats with coordinates
+
+    @markers = @boxes.map do |box|
+      {
+        lat: box.latitude,
+        lng: box.longitude
+      }
+    end
+  end
+
+  def map
+    @boxes = policy_scope(Box).all
+    authorize @boxes
+    @boxes = Box.geocoded #returns flats with coordinates
+
+    @markers = @boxes.map do |box|
+      {
+        lat: box.latitude,
+        lng: box.longitude
+      }
     end
   end
 
