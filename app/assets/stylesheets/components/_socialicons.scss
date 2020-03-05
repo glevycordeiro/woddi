@@ -1,0 +1,23 @@
+// .list-inline {
+//   list-style: none;
+//   padding: 0;
+// }
+
+.list-inline {
+  list-style: none;
+  padding: 0;
+}
+
+.social-icon {
+  font-size: 32px;
+  margin: 8px 24px;
+}
+
+.social-icon:hover {
+  color: #FF8D06;
+  text-decoration: none;
+}
+
+a.social-icon {
+  color: rgb(220, 220, 220);
+}
