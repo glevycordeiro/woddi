@@ -1,7 +1,7 @@
 <div class="box-page-container">
   <div class="box-header">
-    <%= @box.name %>
-    <button type="button" class="btn btn-primary">Book</button>
+    <h1><%= @box.name %></h1>
+    <%= link_to "BOOK", box_le_path(@box_lesson), class: "btn-book" %>
   </div>
     <div class="box-photos"><%= image_tag @box.photos %></div>
       <div class="reviews-info">

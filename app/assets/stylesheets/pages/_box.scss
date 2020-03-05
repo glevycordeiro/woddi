@@ -1,0 +1,37 @@
+// .box-page-container {
+//   display: flex;
+// }
+
+.box-header {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 2%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.btn-book {
+  width: 22%;
+  height: 30%;
+  background-color: #fe8d07;
+  border: #fe8d07;
+  font-weight: 550;
+  font-size: 0.9em;
+  color: black;
+  border-radius: 8px;
+}
+
+.box-photos {
+  img {
+  border-radius: 5%;
+  }
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+
+}
