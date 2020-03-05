@@ -29,7 +29,7 @@ class BoxesController < ApplicationController
         lng: box.longitude
       }
     end
-  end 
+  end
 
   def show
     @booking = Booking.new
