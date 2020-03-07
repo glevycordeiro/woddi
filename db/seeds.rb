@@ -115,6 +115,15 @@ box_5.photos.attach(io: photo_9, filename: 'crossfit_c4wyiy.png', content_type: 
 photo_10 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583578720/WODDI/slide1_byvgtc.jpg')
 box_5.photos.attach(io: photo_10, filename: 'slide1_byvgtc.jpg', content_type: 'image/jpg')
 
+photo_11 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583598207/WODDI/images_slq7sc.jpg')
+box_6.photos.attach(io: photo_11, filename: 'images_slq7sc.jpg', content_type: 'image/jpg')
+
+photo_12 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583598332/WODDI/crossfit-agachamento_ybn8so.jpg')
+box_7.photos.attach(io: photo_12, filename: 'crossfit-agachamento_ybn8so.jpg', content_type: 'image/jpg')
+
+photo_13 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583598407/WODDI/images_tbakld.jpg')
+box_7.photos.attach(io: photo_13, filename: 'images_tbakld.jpg', content_type: 'image/jpg')
+
 puts "Creating classes for each box..."
 
 start_date = Faker::Time.between(from: DateTime.now, to: DateTime.now + 14)
