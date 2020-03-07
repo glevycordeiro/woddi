@@ -1,14 +1,14 @@
-<% if user_signed_in? %>
+
   <nav id="bottom-nav">
     <div class="container">
       <ul id="bottom-list" class="flex-container">
         <li>
-          <%= link_to "#" do %>
+          <%= link_to boxes_path do %>
             <i class="fas fa-list-ul fa-lg"></i>
           <% end %>
         </li>
         <li>
-          <%= link_to "#" do %>
+          <%= link_to map_path do %>
             <i class="fas fa-map-marker-alt fa-lg"></i>
           <% end %>
         </li>
@@ -30,5 +30,5 @@
       </ul>
     </div>
   </nav>
-<% end %>
+
 
