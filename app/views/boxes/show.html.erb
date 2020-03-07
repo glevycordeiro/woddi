@@ -14,7 +14,7 @@
               <div class="carousel-inner">
                 <%= @box.photos.each do |photo| %>
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="<%= photo %>" alt="First slide">
+                  <img class="d-block w-100" src="<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>" alt="First slide">
                 </div>
                 <% end %>
               </div>

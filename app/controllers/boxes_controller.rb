@@ -50,6 +50,10 @@ class BoxesController < ApplicationController
 
   private
 
+  def box_params
+    params.require(:box).permit(:name, :address, :box_url, :latitude, :longitude, :user_id, photos: [])
+  end
+
   def next_day
     user_input = params[:search][:date]
     search = Date.parse(user_input)
