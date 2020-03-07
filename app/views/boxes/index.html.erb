@@ -1,6 +1,8 @@
 <div class="container boxes-container">
-  <% @boxes.each do |box| %>
-    <%= render "card_box", box: box %>
-  <% end %>
+  <div class="row">
+    <% @boxes.each do |box| %>
+      <%= render "card_box", box: box %>
+    <% end %>
+  </div>
 </div>
 
