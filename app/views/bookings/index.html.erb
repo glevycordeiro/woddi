@@ -1,0 +1,51 @@
+<div class="my-bookings">
+  <h1>My Bookings</h1>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="false">Past</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="cancelled-tab" data-toggle="tab" href="#cancelled" role="tab" aria-controls="cancelled" aria-selected="false">Cancelled</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
+    <% @bookings.each do |booking| %>
+      <% if booking.status == "Active" %>
+              <%= booking.box.photos.first %>
+              <%= booking.box.name %>
+              <%= booking.box_lesson.title %>
+              <%= booking.box_lesson.start_date_time.strftime('%H:%M') %>
+          <% end %>
+      <% end %>
+  </div>
+  <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
+    <% @bookings.each do |booking| %>
+      <% if booking.status == "Checked-in" %>
+              <%= booking.box.name %>
+              <%= booking.box_lesson.title %>
+              <%= booking.box_lesson.start_date_time.strftime('%H:%M') %>
+          <% end %>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="cancelled" role="tabpanel" aria-labelledby="cancelled-tab">
+    <% @bookings.each do |booking| %>
+      <% if booking.status == "Cancelled" %>
+              <%= booking.box.name %>
+              <%= booking.box_lesson.title %>
+              <%= booking.box_lesson.start_date_time.strftime('%H:%M') %>
+          <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+    </ul>
+  </div>
+</div>
