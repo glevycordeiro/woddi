@@ -5,10 +5,15 @@
     <% if box.photos.any? %>
       <%= cl_image_tag box.photos.first.key %>
     <% end %>
-    <h2><%= box.name[0..20] %></h2>
+
+    <div class="card-map-text">
+      <h2><%= box.name[0..20] %></h2>
+      <p><%= box.address %></p>
+    </div>
 
     <div class="card-map-rating">
-      <%= box.avg_review %> <i class="fas fa-star "></i>
+        <%= box.avg_review %>
+        <i class="fas fa-star "></i>
     </div>
   </div>
 </div>

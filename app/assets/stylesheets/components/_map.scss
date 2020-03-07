@@ -1,8 +1,9 @@
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 450px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 20px;
   border-radius: 5px;
 }
@@ -12,26 +13,45 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.card-map {
+  display: flex;
+  justify-content: center;
+}
+
 .card-map h2 {
   font-size: 0.9rem;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .card-map .card-map-infos {
   color: black;
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  width: 250px;
 }
 
-.card-map .card-map-infos {
+.card-map .card-map-rating {
   color: black;
-  padding: 16px;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.card-map img {
+  height: 100%;
+  width: 75px;
+  object-fit: cover;
+  justify-content: center;
+}
+
+.card-map-text {
+  width: 50%;
+  justify-content: center;
+  flex-grow: 1;
 }
