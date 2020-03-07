@@ -1,5 +1,5 @@
-<div class="container boxes-container">
-  <h1><%= box_lesson.box.name %></h1>
+<div class="container boxes-container text-center">
+  <h1><%= @box.name %></h1>
     <div class="row">
       <% @box_lessons.each do |box_lesson| %>
         <%= render "card_box_lesson", box_lesson: box_lesson %>

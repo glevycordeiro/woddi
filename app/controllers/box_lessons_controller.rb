@@ -3,6 +3,7 @@ class BoxLessonsController < ApplicationController
 
   def index
     @box_lessons = policy_scope(BoxLesson).all
+    @box = Box.find(params["box_id"])
   end
 
   def new
