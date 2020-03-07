@@ -26,7 +26,8 @@ class BoxesController < ApplicationController
     @markers = @boxes.map do |box|
       {
         lat: box.latitude,
-        lng: box.longitude
+        lng: box.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { box: box })
       }
     end
   end
