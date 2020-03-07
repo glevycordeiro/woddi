@@ -22,7 +22,9 @@ class BoxesController < ApplicationController
     @boxes = policy_scope(Box).all
     authorize @boxes
     @boxes = Box.geocoded #returns flats with coordinates
-
+      if params[:city] != nil && params[:city] != ""
+        @boxes = @boxes.near(params[:city])
+      end
     @markers = @boxes.map do |box|
       {
         lat: box.latitude,
