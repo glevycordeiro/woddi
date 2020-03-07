@@ -2,11 +2,9 @@
 <div class="card-product">
   <%= image_tag box.photos %>
   <div class="card-product-infos">
-    <div>
-      <h2><%= box.name[0..15] %></h2>
-      <div class="card-product-rating">
-        <%= box.avg_review %><i class="fas fa-star"></i>
-      </div>
+    <h2><%= box.name[0..20] %></h2>
+    <div class="card-product-rating">
+      <%= box.avg_review %> <i class="fas fa-star"></i>
     </div>
   </div>
 </div>
