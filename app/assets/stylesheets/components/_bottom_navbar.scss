@@ -5,15 +5,16 @@
 }
   #bottom-nav {
     text-align: center;
-    font-size: 14px;
+    font-size: 90%;
     color: white;
     padding: 0;
-    box-shadow: -1px 0px 1px 1px gray;
+    box-shadow: -1% 0% 1% 1% gray;
     display: flex;
     position: fixed;
     width: 100%;
     background: white;
-    bottom: 0px;
+    left: 0;
+    bottom: 0%;
     z-index: 99;
   }
 ​
@@ -21,11 +22,11 @@
     display: flex;
     padding: 0;
     margin-bottom: 0;
+    justify-content: space-between;
   }
 ​
   #bottom-list, li {
-    flex-grow: 1;
-    padding: 5px 0;
+    padding: 1% 0;
     i {
       color:grey;
     }
