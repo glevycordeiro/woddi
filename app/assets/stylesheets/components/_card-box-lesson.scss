@@ -1,4 +1,4 @@
-.card-booking {
+.card-box-lesson {
   overflow: hidden;
   height: 61px;
   background: white;
@@ -12,13 +12,13 @@
   // baseline: aligh-items;
 }
 
-.card-booking {
+.card-box-lesson {
   background: linear-gradient(90deg, white 80%, $woddi 20%);
 }
-.card-booking-title, .card-booking-time, .card-booking-price {
+.card-box-lesson-title, .card-box-lesson-time, .card-box-lesson-price {
   // flex-grow: 1;
 }
-.card-booking-title h2, .card-booking-time h2, .card-booking-price h2 {
+.card-box-lesson-title h2, .card-box-lesson-time h2, .card-box-lesson-price h2 {
   font-size: 0.9rem;
   font-weight: bold;
   color: black;
@@ -27,19 +27,19 @@
   text-wrap: none;
 }
 
-.card-booking-title h2 {
+.card-box-lesson-title h2 {
   text-align: left;
 }
 
-.card-booking-time h2 {
+.card-box-lesson-time h2 {
   text-align: right;
 }
 
-.card-booking-price h2 {
+.card-box-lesson-price h2 {
   text-align: right;
 }
 
-// .card-booking h2 {
+// .card-box-lesson h2 {
 //   font-size: 0.9rem;
 //   font-weight: bold;
 //   margin: 0;
@@ -48,7 +48,7 @@
 //   padding: 16px;
 // }
 
-// .card-booking .card-booking-infos {
+// .card-box-lesson .card-box-lesson-infos {
 //   color: black;
 //   display: flex;
 //   width: 100%;
@@ -58,7 +58,7 @@
 //   text-align: center;
 // }
 
-// .card-booking .card-booking-infos .card-booking-price-space {
+// .card-box-lesson .card-box-lesson-infos .card-box-lesson-price-space {
 //   color: black;
 //   background-color: $woddi;
 //   padding: 0px;
@@ -66,11 +66,11 @@
 //   width: 80px;
 // }
 
-// .card-booking-price {
+// .card-box-lesson-price {
 
 // }
 
-// .card-booking-time {
+// .card-box-lesson-time {
 //   font-size: 0.9rem;
 //   font-weight: bold;
 //   text-decoration: none;

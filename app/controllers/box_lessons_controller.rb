@@ -6,7 +6,9 @@ class BoxLessonsController < ApplicationController
     @box = Box.find(params["box_id"])
     if params[:lesson_start] != nil && params[:lesson_start] != ""
       @box_lessons = @box_lessons.where("date(box_lessons.start_date_time) = ?", params[:lesson_start].to_date)
-      # byebug
+      session[:lesson_start] = params[:lesson_start]
+    else
+      session[:lesson_start] = Date.today
     end
   end
 
