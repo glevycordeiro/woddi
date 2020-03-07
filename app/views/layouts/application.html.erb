@@ -12,6 +12,10 @@
   <body>
 
     <%= render 'shared/flashes' %>
+
+    <% if action_name == "map" || action_name == "index" %>
+    <%= render 'shared/navbar' %>
+    <% end %>
     <%= yield %>
     <%= render 'shared/bottom_navbar'  %>
 
