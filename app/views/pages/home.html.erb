@@ -1,10 +1,13 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(240,240,240,0.4)), url(<%= image_url 'homebanner.jpg' %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(240,240,240,0.4)), url(https://res.cloudinary.com/woddi/image/upload/v1583580155/WODDI/homebanner_jad1fe.jpg);">
   <div class="center-container text-center">
     <h1>WODDI</h1>
+    <div class="info">
     <p>Join us and book your drop-in.</p>
     <p>Anytime.</p>
     <p>Anywhere.</p>
+    </div>
     <%= link_to "GO", boxes_path, class: "btn-woddi" %>
+    <p>About us</p>
     <%= render 'shared/socialicons' %>
   </div>
 </div>
