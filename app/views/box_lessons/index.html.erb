@@ -1,1 +1,7 @@
-<h1>Hello</h1>
+<h1>@box.name</h1>
+
+<div class="container boxes-container">
+  <% @box_lessons.each do |box| %>
+    <%= render "card_box_lesson", box_lesson: box_lesson %>
+  <% end %>
+</div>
