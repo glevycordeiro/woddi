@@ -1,6 +1,8 @@
 class BoxLessonsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
-    @box_lessons = BoxLesson.all
+    @box_lessons = policy_scope(BoxLesson).all
   end
 
   def new
