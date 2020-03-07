@@ -1,5 +1,7 @@
+
 .box-page-container {
-  background-color: white;
+  // background-color: white;
+
 }
 
 .box-header {
@@ -35,6 +37,12 @@ h1 {
   margin-top: 3%;
 }
 
-.reviews-title {
-
+.reviews-info {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  .reviews-title {
+    display: flex;
+    padding: 80px 30px 5px 30px;
+  }
 }
