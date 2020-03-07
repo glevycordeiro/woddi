@@ -1,9 +1,37 @@
 .mapboxgl-popup {
   max-width: 200px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  border-radius: 5px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+}
+
+.card-map h2 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.card-map .card-map-infos {
+  color: black;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-map .card-map-infos {
+  color: black;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
