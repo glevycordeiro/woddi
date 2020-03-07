@@ -44,11 +44,32 @@ puts 'Creating users...'
 end
 # user_1 = User.create(first_name: "Ana", last_name: "Lopes", dob: "01/06/1989", email: "woddi@gmail.com", password: "123456")
 # user_2 = User.create(first_name: "Rui", last_name: "Nabais", dob: "13/08/1994", email: "lisboa@gmail.com", password: "123456")
-# user_3 = User.create(first_name: "João", last_name: "Pereira", dob: "10/11/1992", email: "teste@gmail.com", password: "123456")
-# user_4 = User.create(first_name: "Tomás", last_name: "Viegas", dob: "29/004/1965", email: "lewagonlisboa@gmail.com", password: "123456")
+# # user_3 = User.create(first_name: "João", last_name: "Pereira", dob: "10/11/1992", email: "teste@gmail.com", password: "123456")
+# # user_4 = User.create(first_name: "Tomás", last_name: "Viegas", dob: "29/004/1965", email: "lewagonlisboa@gmail.com", password: "123456")
 # user_test = User.create(first_name: "Maria", last_name: "Silva", dob: "21/02/1980", email: "lewagon@gmail.com", password: "123456")
 
+puts "Uploading avatar photos..."
 
+
+# <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+# <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+# <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
+
+
+# avatar_1 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583590074/WODDI/man-avatar-profile-vector-21372076_ij54br.jpg')
+# user_1.avatar.attach(io: avatar_1, filename: 'man-avatar-profile-vector-21372076_ij54br.jpg', content_type: 'image/jpg')
+
+# avatar_2 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583590195/WODDI/87-512_o2ubq8.png')
+# user_2.avatar.attach(io: avatar_2, filename: '87-512_o2ubq8.png', content_type: 'image/png')
+
+# avatar_3 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583590241/WODDI/computer-icons-user-profile-avatar-png-favpng-ypy9BWih5X28x0zDEBeemwyx8_ugnogs.jpg')
+# User.all.sample.avatar.attach(io: avatar_3, filename: 'computer-icons-user-profile-avatar-png-favpng-ypy9BWih5X28x0zDEBeemwyx8_ugnogs.jpg', content_type: 'image/jpg')
+
+# avatar_4 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583590312/WODDI/flat-business-man-user-profile-avatar-icon-vector-4333097_bvfbbe.jpg')
+# User.all.sample.attach(io: avatar_4, filename: 'flat-business-man-user-profile-avatar-icon-vector-4333097_bvfbbe.jpg', content_type: 'image/jpg')
+
+# avatar_5 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583590374/WODDI/user-profile-computer-icons-girl-customer-avatar_kpmyne.jpg')
+# User.all.sample.attach(io: avatar_5, filename: 'user-profile-computer-icons-girl-customer-avatar_kpmyne.jpg', content_type: 'image/jpg')
 
 puts 'Creating boxes...'
 

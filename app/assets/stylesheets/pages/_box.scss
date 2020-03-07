@@ -1,12 +1,14 @@
+
 .box-page-container {
-  background-color: white;
+  // background-color: white;
+
 }
 
 .box-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 5%
+  padding: 30px 10px;
 }
 
 h1 {
@@ -35,6 +37,13 @@ h1 {
   margin-top: 3%;
 }
 
-.reviews-title {
-
+.reviews-info {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  .reviews-title {
+    display: flex;
+    padding: 40px 20px 0px 30px;
+    font-size: 1.6rem;
+  }
 }
