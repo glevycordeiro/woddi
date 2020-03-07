@@ -13,7 +13,7 @@
 
     <%= render 'shared/flashes' %>
 
-    <% if action_name == "map" || action_name == "index" %>
+    <% if controller_name == "boxes" && (action_name == "map" || action_name == "index") %>
     <%= render 'shared/navbar' %>
     <% end %>
     <%= yield %>
