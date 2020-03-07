@@ -21,4 +21,27 @@ h2 {
 
 .form-inputs {
   margin-top: 30px;
+
+}
+
+#subm {
+  background-color: $green;
+  border-color: $green;
+  margin-right: 100px;
+
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.renderdevise {
+color: $gray;
+font-size: 14px;
+margin-top: 20px;
+
+padding-left: 160px;
+
+
 }
