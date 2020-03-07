@@ -2,12 +2,15 @@
   <div class="center-container text-center">
     <h1>WODDI</h1>
     <div class="info">
-    <p>Join us and book your drop-in.</p>
-    <p>Anytime.</p>
-    <p>Anywhere.</p>
+      <p>Join us and book your drop-in.</p>
+      <p>Anytime.</p>
+      <p>Anywhere.</p>
+      <%= link_to "GO", boxes_path, class: "btn-woddi" %>
+      <div class="social">
+        <p style="font-size: 16px">About us</p>
+       <%= render 'shared/socialicons' %>
+      </div>
     </div>
-    <%= link_to "GO", boxes_path, class: "btn-woddi" %>
-    <p>About us</p>
-    <%= render 'shared/socialicons' %>
   </div>
 </div>
+
