@@ -1,6 +1,6 @@
 <%= link_to box_path(box) do %>
 <div class="card-product">
-  <%= image_tag box.photos %>
+  <%= image_tag box.photos.first %>
   <div class="card-product-infos">
     <div>
       <h2><%= box.name[0..15] %></h2>
