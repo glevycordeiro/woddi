@@ -1,16 +1,19 @@
 <div class="col-sm-12 col-lg-6">
   <div class="card-box-review">
     <div class="user-review-info">
-      <%= review.user.avatar %>
-      <p><%= review.user.first_name %></p>
-      <%= review.user.last_name %>
+      <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+      <div class="user-name-review">
+      <%= review.user.first_name %> <%= review.user.last_name %>
+      </div>
     </div>
       <div class="card-box-review-infos">
-        <%= review.description %>
-        <div class="review-rating-date">
-          <%= review.rating %><i class="fas fa-star"></i>
-          <p class="review-date"><%= review.created_at.strftime('%d/%m/%y') %></p>
+        <div class="review-description">
+          <%= review.description %>
         </div>
+          <div class="review-rating-date">
+            <%= review.rating %><i class="fas fa-star"></i>
+            <p class="review-date"><%= review.created_at.strftime('%d/%m/%y') %></p>
+          </div>
       </div>
   </div>
 </div>
