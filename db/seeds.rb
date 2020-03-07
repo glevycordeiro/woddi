@@ -78,9 +78,9 @@ box_2 = Box.create(user: User.all.sample, address: "Parque Eduardo VII, 1070-099
 box_3 = Box.create(user: User.all.sample, address: "R. Dom Luís de Noronha 25A, 1050-099 Lisboa", name: "MatchBox CrossFit", box_url: "https://www.matchboxcrossfit.com/")
 box_4 = Box.create(user: User.all.sample, address: "Rua Gomes Freire 6, Lisboa", name: "The Bakery Crossfit", box_url: "http://www.thebakerycrossfit.com/")
 box_5 = Box.create(user: User.all.sample, address: "R. Alexandre Herculano 10, 2795-240 Linda-a-Velha", name: "CrossFit Jamor", box_url: "https://www.ironbox.pt/site/default.php")
-# box_6 = Box.create(user: User.all.sample, address: "Av. Duque Loulé Nº50, 2795-118 Linda-a-Velha", name: "CrossFit LAV", box_url: "https://www.crossfitlav.com/", photos: "https://static.wixstatic.com/media/e8c789_7b0eb501c2dc4bdaba6fc19d9604c7c0~mv2.png/v1/fill/w_558,h_630,al_c,q_85,usm_0.66_1.00_0.01/e8c789_7b0eb501c2dc4bdaba6fc19d9604c7c0~mv2.webp")
-# box_7 = Box.create(user: User.all.sample, address: "Armazém MIndFit Academy, Rua A, Azinhaga da Torre do Fato, 1600-401 Lisboa", name: "Move On CrossFit", box_url: "http://www.crossfitmoveon.com/", photos: "http://www.crossfitmoveon.com/wp-content/uploads/2018/01/cropped-crossfitt_home.png")
-# box_8 = Box.create(user: User.all.sample, address: "Rua Professor Fernando da Fonseca, 1600-618 Lisboa", name: "CrossFit Alvalade", box_url: "https://crossfitalvalade.com/", photos: "https://lh3.googleusercontent.com/proxy/hJfZpZW6MilsB4nuSXyBRdjo5x_X4ds0xUWLQT5fykslOTMxo37IiVJKijScjUw5g9BldYArV_-IBqAqPXjTJCkJKtzU49C_kHah3CjpuLpnTZ5iDFxmRR1hxEVig7oeEO6O")
+box_6 = Box.create(user: User.all.sample, address: "Av. Duque Loulé Nº50, 2795-118 Linda-a-Velha", name: "CrossFit LAV", box_url: "https://www.crossfitlav.com/")
+box_7 = Box.create(user: User.all.sample, address: "Armazém MIndFit Academy, Rua A, Azinhaga da Torre do Fato, 1600-401 Lisboa", name: "Move On CrossFit", box_url: "http://www.crossfitmoveon.com/")
+# box_8 = Box.create(user: User.all.sample, address: "Rua Professor Fernando da Fonseca, 1600-618 Lisboa", name: "CrossFit Alvalade", box_url: "https://crossfitalvalade.com/")
 # box_9 = Box.create(user: User.all.sample, address: "Rua Tony de Matos, nº16, 2675-621 Odivelas", name: "CrossFit Odivelas", box_url: "http://crossfitodivelas.pt/", photos: "http://crossfitodivelas.pt/wp-content/uploads/2019/03/CFO-12.jpg")
 
 puts 'Uploading photos...'
@@ -115,7 +115,7 @@ box_5.photos.attach(io: photo_9, filename: 'crossfit_c4wyiy.png', content_type: 
 photo_10 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583578720/WODDI/slide1_byvgtc.jpg')
 box_5.photos.attach(io: photo_10, filename: 'slide1_byvgtc.jpg', content_type: 'image/jpg')
 
-photo_11 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583598207/WODDI/images_slq7sc.jpg')
+photo_11 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583578720/WODDI/slide1_byvgtc.jpg')
 box_6.photos.attach(io: photo_11, filename: 'images_slq7sc.jpg', content_type: 'image/jpg')
 
 photo_12 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583598332/WODDI/crossfit-agachamento_ybn8so.jpg')
