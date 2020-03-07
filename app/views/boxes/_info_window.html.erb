@@ -2,7 +2,11 @@
 <div class="card-map">
 
   <div class="card-map-infos">
+    <% if box.photos.any? %>
+      <%= cl_image_tag box.photos.first.key %>
+    <% end %>
     <h2><%= box.name[0..20] %></h2>
+
     <div class="card-map-rating">
       <%= box.avg_review %> <i class="fas fa-star "></i>
     </div>
