@@ -2,14 +2,26 @@
   position: relative;
   background-color: #FF8D06;
   color: black;
-  margin-top: 80px;
+  margin-top: 100px;
   border-radius: 8px;
   font-size: 24px;
-  font-height: bold;
-  padding: 16px 120px;
+  font-weight: bold;
+  padding: 4px 60px;
   float: none;
   display: inline-block;
   text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  .btn-woddi {
+    margin-top: 120px;
+    padding: 10px 100px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-bottom: 40px;
+
+  }
 }
 
 .btn-woddi:hover {
