@@ -1,0 +1,80 @@
+.card-booking {
+  overflow: hidden;
+  height: 61px;
+  background: white;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  // display: flex;
+  // align-items: center;
+  margin: 15px;
+  border-radius: 5px;
+  // justify-content: space-between;
+  padding: 22px;
+  // baseline: aligh-items;
+}
+
+.card-booking {
+  background: linear-gradient(90deg, white 80%, $woddi 20%);
+}
+.card-booking-title, .card-booking-time, .card-booking-price {
+  // flex-grow: 1;
+}
+.card-booking-title h2, .card-booking-time h2, .card-booking-price h2 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  text-decoration: none;
+  text-wrap: none;
+}
+
+.card-booking-title h2 {
+  text-align: left;
+}
+
+.card-booking-time h2 {
+  text-align: right;
+}
+
+.card-booking-price h2 {
+  text-align: right;
+}
+
+// .card-booking h2 {
+//   font-size: 0.9rem;
+//   font-weight: bold;
+//   margin: 0;
+//   text-decoration: none;
+//   line-height: 1.5;
+//   padding: 16px;
+// }
+
+// .card-booking .card-booking-infos {
+//   color: black;
+//   display: flex;
+//   width: 100%;
+//   justify-content: space-between;
+//   padding: 0px;
+//   height: 100%;
+//   text-align: center;
+// }
+
+// .card-booking .card-booking-infos .card-booking-price-space {
+//   color: black;
+//   background-color: $woddi;
+//   padding: 0px;
+//   border-radius: 4px;
+//   width: 80px;
+// }
+
+// .card-booking-price {
+
+// }
+
+// .card-booking-time {
+//   font-size: 0.9rem;
+//   font-weight: bold;
+//   text-decoration: none;
+//   line-height: 1.5;
+//   flex-growth: 1;
+// }
+
