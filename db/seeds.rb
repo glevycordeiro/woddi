@@ -82,7 +82,7 @@ box_3.photos.attach(io: photo_5, filename: 'siglas-do-crossfit1_agsvkn.jpg', con
 photo_6 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443606/WODDI/22_whzzuz.jpg')
 box_3.photos.attach(io: photo_6, filename: '22_whzzuz.jpg', content_type: 'image/jpg')
 
-photo_7 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443591/WODDI/ucfpkiyibmhuctojj54z.jpg')
+photo_7 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443606/WODDI/22_whzzuz.jpg')
 box_4.photos.attach(io: photo_7, filename: 'ucfpkiyibmhuctojj54z.jpg', content_type: 'image/jpg')
 
 photo_8 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443578/WODDI/thumbs.web.sapo.io_lhbz57.jpg')
