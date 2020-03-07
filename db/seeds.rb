@@ -82,7 +82,7 @@ box_3.photos.attach(io: photo_5, filename: 'siglas-do-crossfit1_agsvkn.jpg', con
 photo_6 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443606/WODDI/22_whzzuz.jpg')
 box_3.photos.attach(io: photo_6, filename: '22_whzzuz.jpg', content_type: 'image/jpg')
 
-photo_7 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443591/WODDI/ucfpkiyibmhuctojj54z.jpg')
+photo_7 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443606/WODDI/22_whzzuz.jpg')
 box_4.photos.attach(io: photo_7, filename: 'ucfpkiyibmhuctojj54z.jpg', content_type: 'image/jpg')
 
 photo_8 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583443578/WODDI/thumbs.web.sapo.io_lhbz57.jpg')
@@ -92,7 +92,7 @@ photo_9 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583578731/WO
 box_5.photos.attach(io: photo_9, filename: 'crossfit_c4wyiy.png', content_type: 'image/png')
 
 photo_10 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583578720/WODDI/slide1_byvgtc.jpg')
-box_5.photos.attach(io: photo_10, filename: 'slide1_byvgtc.jpg', content_type: 'image/png')
+box_5.photos.attach(io: photo_10, filename: 'slide1_byvgtc.jpg', content_type: 'image/jpg')
 
 puts "Creating classes for each box..."
 
