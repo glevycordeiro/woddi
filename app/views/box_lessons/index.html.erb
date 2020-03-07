@@ -1,5 +1,13 @@
-<div class="container boxes-container text-center">
+<div class="container box-lessons-container text-center">
   <h1><%= @box.name %></h1>
+  <%= simple_form_for :search, url: box_box_lessons_path(@box), method: :get do |f| %>
+    <input type="date" id="start" name="lesson_start"
+       value="<%= Date.today %>"
+       min="<%= Date.today %>" max="2024-12-31">
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i>
+      </button>
+  <% end %>
     <div class="row">
       <% @box_lessons.each do |box_lesson| %>
         <%= render "card_box_lesson", box_lesson: box_lesson %>

@@ -126,7 +126,7 @@ box_7.photos.attach(io: photo_13, filename: 'images_tbakld.jpg', content_type: '
 
 puts "Creating classes for each box..."
 
-start_date = Faker::Time.between(from: DateTime.now, to: DateTime.now + 14)
+start_date = Faker::Time.between(from: DateTime.now, to: DateTime.now + 100.days)
 Box.all.each do |box|
   100.times do
     box_lesson = BoxLesson.new(

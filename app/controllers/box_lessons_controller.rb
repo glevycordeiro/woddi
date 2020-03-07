@@ -4,6 +4,10 @@ class BoxLessonsController < ApplicationController
   def index
     @box_lessons = policy_scope(BoxLesson).all
     @box = Box.find(params["box_id"])
+    if params[:lesson_start] != nil && params[:lesson_start] != ""
+      @box_lessons = @box_lessons.where("date(box_lessons.start_date_time) = ?", params[:lesson_start].to_date)
+      # byebug
+    end
   end
 
   def new
