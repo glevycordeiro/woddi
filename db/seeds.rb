@@ -18,10 +18,12 @@ require 'open-uri'
 file = URI.open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showtime/woman-beard-transgender-lgbt-mtf-avatar-512_sdrnd1.png')
 # filename = File.basename(URI.parse(url).path)
 
+Review.destroy_all
 User.destroy_all
 Box.destroy_all
 BoxLesson.destroy_all
 Booking.destroy_all
+
 
 booking_status = ["Active", "Checked-in", "Cancelled", "Pending"]
 
@@ -37,12 +39,14 @@ puts 'Creating users...'
 #   )
 #   user.save!
 # end
-
-user_1 = User.create(first_name: "Ana", last_name: "Lopes", dob: "01/06/1989", email: "woddi@gmail.com", password: "123456")
-user_2 = User.create(first_name: "Rui", last_name: "Nabais", dob: "13/08/1994", email: "lisboa@gmail.com", password: "123456")
-user_3 = User.create(first_name: "João", last_name: "Pereira", dob: "10/11/1992", email: "teste@gmail.com", password: "123456")
-user_4 = User.create(first_name: "Tomás", last_name: "Viegas", dob: "29/004/1965", email: "lewagonlisboa@gmail.com", password: "123456")
-user_test = User.create(first_name: "Maria", last_name: "Silva", dob: "21/02/1980", email: "lewagon@gmail.com", password: "123456")
+100.times do
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, dob: Faker::Date.birthday(min_age: 18, max_age: 65), email: Faker::Internet.email, password: "123456")
+end
+# user_1 = User.create(first_name: "Ana", last_name: "Lopes", dob: "01/06/1989", email: "woddi@gmail.com", password: "123456")
+# user_2 = User.create(first_name: "Rui", last_name: "Nabais", dob: "13/08/1994", email: "lisboa@gmail.com", password: "123456")
+# user_3 = User.create(first_name: "João", last_name: "Pereira", dob: "10/11/1992", email: "teste@gmail.com", password: "123456")
+# user_4 = User.create(first_name: "Tomás", last_name: "Viegas", dob: "29/004/1965", email: "lewagonlisboa@gmail.com", password: "123456")
+# user_test = User.create(first_name: "Maria", last_name: "Silva", dob: "21/02/1980", email: "lewagon@gmail.com", password: "123456")
 
 
 
@@ -94,7 +98,7 @@ puts "Creating classes for each box..."
 
 start_date = Faker::Time.between(from: DateTime.now, to: DateTime.now + 14)
 Box.all.each do |box|
-  10.times do
+  100.times do
     box_lesson = BoxLesson.new(
       start_date_time: start_date,
       end_date_time: start_date + (60*60),
@@ -108,18 +112,42 @@ Box.all.each do |box|
 end
 
 puts "Creating bookings..."
-
-booking_1 = Booking.create(user: User.all.sample, status: "Active", box_lesson: BoxLesson.all.sample, student_first_name: "Margarida", student_email: "margarida@gmail.com", student_phone: "912345678", student_last_name: "Pascoal")
-booking_2 = Booking.create(user: User.all.sample, status: "Pending", box_lesson: BoxLesson.all.sample, student_first_name: "Filipe", student_email: "filipe@gmail.com", student_phone: "912345679", student_last_name: "Costa")
-booking_3 = Booking.create(user: User.all.sample, status: "Checked-in", box_lesson: BoxLesson.all.sample, student_first_name: "Paulo", student_email: "paulo@gmail.com", student_phone: "912345648", student_last_name: "Pita")
-booking_4 = Booking.create(user: User.all.sample, status: "Checked-in", box_lesson: BoxLesson.all.sample, student_first_name: "Gustavo", student_email: "gustavo@gmail.com", student_phone: "912343678", student_last_name: "Leite")
-booking_5 = Booking.create(user: User.all.sample, status: "Cancelled", box_lesson: BoxLesson.all.sample, student_first_name: "Ana", student_email: "ana@gmail.com", student_phone: "913345678", student_last_name: "Mendes")
-booking_6 = Booking.create(user: User.all.sample, status: "Checked-in", box_lesson: BoxLesson.all.sample, student_first_name: "André", student_email: "andre@gmail.com", student_phone: "912565678", student_last_name: "Lima")
-
 puts "Creating reviews..."
 
-review_1 = Review.create(description: "Great Stuff 1" , rating: rand(1..5), booking: Booking.all.sample)
-review_2 = Review.create(description: "Great Stuff 2" , rating: rand(1..5), booking: Booking.all.sample)
-review_3 = Review.create(description: "Great Stuff 3" , rating: rand(1..5), booking: Booking.all.sample)
-review_4 = Review.create(description: "Great Stuff 4" , rating: rand(1..5), booking: Booking.all.sample)
-review_5 = Review.create(description: "Great Stuff 5" , rating: rand(1..5), booking: Booking.all.sample)
+100.times do
+  user = User.all.sample
+  booking = Booking.create(user: user, status: ["Active", "Pending", "Checked-in", "Cancelled"].sample, box_lesson: BoxLesson.all.sample, student_first_name: Faker::Name.first_name, student_email: Faker::Internet.email, student_phone: Faker::PhoneNumber.phone_number_with_country_code, student_last_name: Faker::Name.last_name)
+  if booking.status == "Checked-in"
+    Review.create(description: Faker::TvShows::FamilyGuy.quote, rating: rand(1..5), booking: booking)
+  end
+end
+
+# review_2 = Review.create(description: "Great Stuff 2" , rating: rand(1..5), booking: Booking.all.sample)
+# review_3 = Review.create(description: "Great Stuff 3" , rating: rand(1..5), booking: Booking.all.sample)
+# review_4 = Review.create(description: "Great Stuff 4" , rating: rand(1..5), booking: Booking.all.sample)
+# review_5 = Review.create(description: "Great Stuff 5" , rating: rand(1..5), booking: Booking.all.sample)
+# review_6 = Review.create(description: "Great Stuff 6" , rating: rand(1..5), booking: Booking.all.sample)
+# review_7 = Review.create(description: "Great Stuff 7" , rating: rand(1..5), booking: Booking.all.sample)
+# review_8 = Review.create(description: "Great Stuff 8" , rating: rand(1..5), booking: Booking.all.sample)
+# review_9 = Review.create(description: "Great Stuff 9" , rating: rand(1..5), booking: Booking.all.sample)
+# review_10 = Review.create(description: "Great Stuff 10" , rating: rand(1..5), booking: Booking.all.sample)
+# review_11 = Review.create(description: "Bravo 1" , rating: rand(1..5), booking: Booking.all.sample)
+# review_12 = Review.create(description: "Bravo 2" , rating: rand(1..5), booking: Booking.all.sample)
+# review_13 = Review.create(description: "Bravo 3" , rating: rand(1..5), booking: Booking.all.sample)
+# review_14 = Review.create(description: "Bravo 4" , rating: rand(1..5), booking: Booking.all.sample)
+# review_15 = Review.create(description: "Bravo 5" , rating: rand(1..5), booking: Booking.all.sample)
+# review_16 = Review.create(description: "Bravo 6" , rating: rand(1..5), booking: Booking.all.sample)
+# review_17 = Review.create(description: "Bravo 7" , rating: rand(1..5), booking: Booking.all.sample)
+# review_18 = Review.create(description: "Bravo 8" , rating: rand(1..5), booking: Booking.all.sample)
+# review_19 = Review.create(description: "Bravo 9" , rating: rand(1..5), booking: Booking.all.sample)
+# review_20 = Review.create(description: "Bravo 10" , rating: rand(1..5), booking: Booking.all.sample)
+# review_21 = Review.create(description: "Bis 1" , rating: rand(1..5), booking: Booking.all.sample)
+# review_22 = Review.create(description: "Bis 2" , rating: rand(1..5), booking: Booking.all.sample)
+# review_23 = Review.create(description: "Bis 3" , rating: rand(1..5), booking: Booking.all.sample)
+# review_24 = Review.create(description: "Bis 4" , rating: rand(1..5), booking: Booking.all.sample)
+# review_25 = Review.create(description: "Bis 5" , rating: rand(1..5), booking: Booking.all.sample)
+# review_26 = Review.create(description: "Bis 6" , rating: rand(1..5), booking: Booking.all.sample)
+# review_27 = Review.create(description: "Bis 7" , rating: rand(1..5), booking: Booking.all.sample)
+# review_28 = Review.create(description: "Bis 8" , rating: rand(1..5), booking: Booking.all.sample)
+# review_29 = Review.create(description: "Bis 9" , rating: rand(1..5), booking: Booking.all.sample)
+# review_30 = Review.create(description: "Bis 10" , rating: rand(1..5), booking: Booking.all.sample)

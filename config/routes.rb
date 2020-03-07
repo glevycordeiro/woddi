@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :boxes, only: [:index, :show] do
     resources :box_lessons, only: [:index]
   end
+  get 'map', to: 'boxes#map', as: :map
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
