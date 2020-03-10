@@ -27,7 +27,6 @@ class BoxLessonsController < ApplicationController
       render :new
     end
     @booking = Booking.new
-    raise
     @available_drop_ins = params[:capacity] - @box_lesson.booking.length
   end
 
