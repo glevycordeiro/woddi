@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
   #before_action :check_if_redeem
+
+  def index
+    @bookings = policy_scope(Booking).all
+  end
+
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
