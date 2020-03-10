@@ -15,8 +15,11 @@
 
   <div class="form-actions">
     <%= f.button :submit, "Log in", class: "btn btn-success", id: "subm" %>
-    <%= render "devise/shared/links"%>
   </div>
+  <div class= "member">
+    <span>Not yet a member?
+    <%= render "devise/shared/links"%></span>
+    </div>
 <% end %>
 
 </div>
