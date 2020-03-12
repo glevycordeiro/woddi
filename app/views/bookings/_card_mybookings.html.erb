@@ -1,28 +1,24 @@
 <div class="col-sm-12 col-lg-6">
-  <%= link_to box_path(booking.box), class: "text-decoration-none" do %>
+
     <div class="card-mybooking">
       <div class="booking-img">
         <%= image_tag booking.box.photos.first %>
       </div>
       <div class="card-mybooking-infos">
-        <div class="text-mybooking-infos">
+        <%= link_to box_path(booking.box), class: "text-decoration-none" do %>
           <h2><%= booking.box.name[0..20] %></h2>
-          <p><%= booking.box.address %></p>
           <p>Workout Chosen: <%= booking.box_lesson.title %></p>
           <p><%= booking.box_lesson.start_date_time.strftime('%d/%m/%y') %> <%= booking.box_lesson.start_date_time.strftime('%H:%M') %> </p>
-        </div>
+        <% end %>
       </div>
       <div class="btn-box">
         <% if booking.status == "Active" %>
          <%= link_to "", cancelled_path(booking: booking), class: "far fa-times-circle close-btn"%>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
+          <button type="button" data-toggle="modal" data-target="#exampleModal">
+            <i class="far fa-edit"></i>
           </button>
-        <% end %>
+
       </div>
-        <!-- <div class="card-mybooking-rating">
-          <%= booking.box.avg_review %> <i class="fas fa-star"></i>
-        </div> -->
     </div>
     <% end %>
 </div>

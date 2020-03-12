@@ -1,5 +1,4 @@
 .card-mybooking {
-  overflow: hidden;
   height: 61px;
   background: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -8,24 +7,21 @@
   margin: 20px;
   border-radius: 5px;
   justify-content: space-between;
-  .card-mybooking-infos {
-    display: flex;
-    justify-content: center;
-  }
 }
-
-.card-mybooking img {
-  height: 134px;
-  width: 150px;
+.booking-img {
+  width: 40%;
+}
+.booking-img img {
+  height: 100px;
+  width: 100%;
   object-fit: cover;
 }
 
 .card-mybooking-infos {
   color: black;
-  // display: flex;
-  // justify-content: center;
-  // align-items: auto;
-  // width: 100%;
+  margin-left: 15px;
+  margin-top: 15px;
+  width: 100%;
     h2 {
       font-size: 0.9rem;
       font-weight: bold;
@@ -42,13 +38,11 @@
       margin-top: 8px;
       color: black;
     }
-  .btn-box {
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-  }
 }
+.btn-box {
+  flex-direction: column;
+  justify-content: space-between;
+  }
 
 .close-btn {
   color: black;
