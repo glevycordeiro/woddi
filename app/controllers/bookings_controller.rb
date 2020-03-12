@@ -40,7 +40,13 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = "cancelled"
     @booking.save
-    redirect_to dashboard_path, notice: "Your drop-in was cancelled"
+    redirect_to bookings_path, notice: "Your drop-in was cancelled"
+    destroy
+  end
+
+  def destroy
+    @booking = Booking.find(params[:booking])
+    @booking.destroy
   end
 
   private
