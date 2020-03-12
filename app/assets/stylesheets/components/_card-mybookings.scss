@@ -1,5 +1,4 @@
 .card-mybooking {
-  overflow: hidden;
   height: 61px;
   background: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -7,35 +6,21 @@
   // align-items: center;
   margin: 20px;
   border-radius: 5px;
+  justify-content: space-between;
 }
-
-.card-mybooking img {
-  height: 134px;
-  width: 150px;
+.booking-img {
+  width: 40%;
+}
+.booking-img img {
+  height: 100px;
+  width: 100%;
   object-fit: cover;
 }
 
-// .card-mybooking h2 {
-//   font-size: 0.9rem;
-//   font-weight: bold;
-//   margin: 0;
-//   text-decoration: none;
-//   line-height: 1.5;
-// }
-
-// .card-mybooking p {
-//   font-size: 14px;
-//   line-height: 1.4;
-//   opacity: 0.7;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-// }
-
-.card-mybooking .card-mybooking-infos {
+.card-mybooking-infos {
   color: black;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
+  margin-left: 15px;
+  margin-top: 15px;
   width: 100%;
     h2 {
       font-size: 0.9rem;
@@ -53,12 +38,11 @@
       margin-top: 8px;
       color: black;
     }
-  .btn-box {
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  }
 }
+.btn-box {
+  flex-direction: column;
+  justify-content: space-between;
+  }
 
 .close-btn {
   color: black;
@@ -66,9 +50,10 @@
   &:hover {
     color: gray;
   }
-  &.close-btn-margin {
-    margin-bottom: 10px;
-  }
+  // &.close-btn-margin {
+  //   margin-right: 10px;
+
+  // }
 }
 
 // .card-box-review {
@@ -94,4 +79,21 @@
 //       margin-left: 8px;
 //     }
 //   }
+// }
+
+
+// .card-mybooking h2 {
+//   font-size: 0.9rem;
+//   font-weight: bold;
+//   margin: 0;
+//   text-decoration: none;
+//   line-height: 1.5;
+// }
+
+// .card-mybooking p {
+//   font-size: 14px;
+//   line-height: 1.4;
+//   opacity: 0.7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
 // }

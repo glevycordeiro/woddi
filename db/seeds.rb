@@ -135,7 +135,7 @@ Box.all.each do |box|
       box_id: box.id,
       capacity: rand(1..30),
       status: true,
-      price: Faker::Number.between(from: 10, to: 15),
+      price_cents: Faker::Number.between(from: 10, to: 15),
       title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
     )
     box_lesson.save!
