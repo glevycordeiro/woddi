@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'map', to: 'boxes#map', as: :map
 
   resources :bookings, only: [:index, :destroy] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create]
   end
 
   get "cancelled", to: 'bookings#cancelled', as: "cancelled"
