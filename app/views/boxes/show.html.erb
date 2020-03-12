@@ -34,7 +34,7 @@
 
         <div class="reviews-info">
           <p class="reviews-title"><strong>Reviews</strong></p>
-              <div class="container boxes-container">
+              <div class="container reviews-container">
                 <div class="row">
                   <% @box.reviews.each do |review| %>
                     <%= render "card_box_review", review: review %>
