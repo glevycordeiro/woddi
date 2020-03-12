@@ -15,7 +15,7 @@
     <div class="row">
     <% @bookings.each do |booking| %>
       <% if booking.status == "Active" %>
-        <%= render "card_mybookings", booking: booking %>
+        <%= render "card_mybookings", booking: booking, review: @review %>
       <% end %>
     <% end %>
     </div>
@@ -38,3 +38,4 @@
     <hr>
   </div>
 </div>
+

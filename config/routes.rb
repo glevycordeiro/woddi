@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
   get 'map', to: 'boxes#map', as: :map
 
-  resources :bookings, only: [:index, :destroy]
+  resources :bookings, only: [:index, :destroy] do
+    resources :reviews, only: [:create]
+  end
 
   get "cancelled", to: 'bookings#cancelled', as: "cancelled"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
