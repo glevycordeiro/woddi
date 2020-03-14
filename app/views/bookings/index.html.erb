@@ -1,6 +1,7 @@
+<div class="cont">
 <div class="my-bookings">
   <h1>My Bookings</h1>
-</div>
+
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -11,7 +12,7 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
+  <div class="tab-pane show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
     <div class="row">
     <% @bookings.each do |booking| %>
       <% if booking.status == "Active" %>
@@ -32,10 +33,6 @@
 
 </div>
 
-
-
-    </ul>
-    <hr>
-  </div>
+</div>
 </div>
 
