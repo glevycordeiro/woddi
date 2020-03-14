@@ -1,6 +1,5 @@
 <div class="col-sm-12 col-lg-6">
-  <%= link_to root_path do %>
-  <div class="card-box-lesson">
+  <div class="card-box-lesson" data-box-name="<%= box_lesson.box.name %>" data-box-lesson-date-time="<%= box_lesson.start_date_time.strftime('%d/%m/%Y @ %R') %>" data-box-lesson-id="<%= box_lesson.id %>" data-box-lesson-price-cents="<%= box_lesson.price_cents %>€">
     <div class="row">
       <div class="col-4 card-box-lesson-title">
         <h2><%= box_lesson.title[0..20] %></h2>
@@ -9,9 +8,8 @@
         <h2> <%= box_lesson.start_date_time.strftime('%H:%M') %></h2>
       </div>
       <div class="col-4 card-box-lesson-price">
-        <h2><%= box_lesson.price %>€</h2>
+        <h2><%= box_lesson.price_cents %>€</h2>
       </div>
     </div>
   </div>
-  <% end %>
 </div>

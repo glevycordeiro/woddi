@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   #before_action :check_if_redeem
 
   def index
-    @bookings = policy_scope(Booking).all
+    @bookings = policy_scope(Booking).includes(:box_lesson).order("box_lessons.start_date_time")
     @review = Review.new
   end
 
@@ -14,11 +14,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.status = "active"
-    @box_lesson = @booking.box_lesson
+    @booking.status = "Active"
+    @box_lesson = BoxLesson.find(booking_params[:box_lesson_id])
+    @booking.box_lesson = @box_lesson
     authorize @booking
     if @booking.save
-    redirect_to @booking
+    redirect_to bookings_path(@booking)
     # flash[:alert] = "Booking sucessful"
     else
       flash[:notice] = "The number of drop-ins requested is not available. There are only #{@booking.box_lesson.capacity - @booking.capacity} drop-ins available."
@@ -33,13 +34,13 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.status = "cancelled"
+    @booking.status = "Cancelled"
   end
 
   def cancelled
     @booking = Booking.find(params[:booking])
     authorize @booking
-    @booking.status = "cancelled"
+    @booking.status = "Cancelled"
     @booking.save
     redirect_to bookings_path, notice: "Your drop-in was cancelled"
     destroy
@@ -59,7 +60,7 @@ class BookingsController < ApplicationController
   def check_if_redeem
     Booking.all.each do |booking|
       if booking.start_date_time > Y
-        @booking.status = "redeemed"
+        @booking.status = "Checked-in"
       end
     end
   end
