@@ -1,6 +1,6 @@
 .my-bookings {
   padding: 20px;
-
+  margin-bottom: 80px;
 }
 
 .nav-tabs {
@@ -14,23 +14,15 @@
 }
 
 #upcoming {
-  background-color: blue;
   z-index: 1;
-
-  height: 500px;
-
+  height: auto;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.cont {
-  height: 600px;
-  background-color: red;
-}
-
 #past {
   width: auto;
-  height: 670px;
+  height: auto;
   overflow-y: hidden;
   overflow-x: scroll;
 }

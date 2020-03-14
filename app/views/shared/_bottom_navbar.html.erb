@@ -5,16 +5,14 @@
         <li class="<%= controller_name == "boxes" && action_name == "index" ? ' active' : '' %>" >
           <%= link_to boxes_path do %>
             <i class="fas fa-list-ul fa-lg"></i>
-
           <% end %>
         </li>
-        <li class="<%= controller_name == "boxes" && action_name == "map" ? ' active' : '' %>" id="boxesmap_p">
+        <li class="<%= controller_name == "boxes" && action_name == "map" ? ' active' : '' %>" >
           <%= link_to map_path do %>
             <i class="fas fa-map-marker-alt fa-lg"></i>
-
           <% end %>
         </li>
-        <li>
+        <li class="<%= controller_name == "bookings" && action_name == "index" ? ' active' : '' %>" >
           <%= link_to bookings_path do %>
             <i class="far fa-calendar-alt fa-lg"></i>
           <% end %>
@@ -24,7 +22,6 @@
             <i class="far fa-user fa-lg"></i>
           <% end %>
         </li>
-
       </ul>
     </div>
   </nav>
