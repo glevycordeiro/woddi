@@ -15,7 +15,7 @@
     <div class="row">
     <% @bookings.each do |booking| %>
       <% if booking.status == "Active" %>
-        <%= render "card_mybookings", booking: booking, review: @review %>
+        <%= render "card_mybookings", booking: booking %>
       <% end %>
     <% end %>
     </div>
@@ -24,18 +24,22 @@
     <div class="row">
     <% @bookings.each do |booking| %>
       <% if booking.status == "Checked-in" %>
-          <%= render "card_mybookings", booking: booking %>
+          <%= render "card_mybookings", booking: booking, review: @review  %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking<%= booking.id %>">
+            Launch demo modal
+          </button>
       <% end %>
     <% end %>
     </div>
   </div>
 
 </div>
-
-
-
     </ul>
     <hr>
   </div>
 </div>
 
+
+<!-- Review modal -->
+ <%= render "reviews/form_modal", bookings: @bookings, review: @review %>
+<!-- End of modal -->
