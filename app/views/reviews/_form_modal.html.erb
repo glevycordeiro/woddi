@@ -1,9 +1,8 @@
-<% bookings.each do |booking| %>
-<div class="modal fade" id="booking<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="booking_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">How would you rate your experience with <%= booking.box.name %>?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">How would you rate your experience with <span class="box-name-modal" id="box-name"> </span>?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -20,4 +19,7 @@
     </div>
   </div>
 </div>
-<% end %>
+
+<button type="button" class="btn btn-primary" id="create-review-modal-hidden-button" data-toggle="modal" data-target="#booking_modal">
+  Launch demo modal
+</button>
