@@ -1,5 +1,6 @@
 .my-bookings {
   padding: 20px;
+  margin-bottom: 80px;
 }
 
 .nav-tabs {
@@ -11,5 +12,24 @@
 .card-mybooking {
   height: auto;
 }
+
+#upcoming {
+  z-index: 1;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#past {
+  width: auto;
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+
+
+
+
 
 
