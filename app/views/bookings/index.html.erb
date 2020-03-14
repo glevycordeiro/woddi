@@ -24,10 +24,14 @@
     <div class="row">
     <% @bookings.each do |booking| %>
       <% if booking.status == "Checked-in" %>
-          <%= render "card_mybookings", booking: booking %>
+          <%= render "card_mybookings", booking: booking, review: @review  %>
       <% end %>
     <% end %>
     </div>
   </div>
 </div>
 
+
+<!-- Review modal -->
+ <%= render "reviews/form_modal", booking: @bookings.first, review: @review %>
+<!-- End of modal -->

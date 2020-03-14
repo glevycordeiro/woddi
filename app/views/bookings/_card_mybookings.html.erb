@@ -16,35 +16,12 @@
          <%= link_to "", cancelled_path(booking: booking), class: "far fa-times-circle close-btn" %>
         <% end %>
         <% if booking.status == "Checked-in" %>
-          <button type="button" data-toggle="modal" data-target="#exampleModal">
+          <div type="button" class="create-review" data-booking-id="<%= booking.id %>" data-box-name="<%= booking.box.name %>">
               <i class="far fa-edit"></i>
-            </button>
+          </div>
         <% end %>
       </div>
     </div>
 </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">How would you rate your experience with <%= booking.box.name %>?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for([booking, @review]) do |f| %>
-          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { class: 'review-rating' } %>
-          <%= f.input :description, class: "review-write" %>
-          <%= f.submit :Submit, class: "btn btn-woddi-sm" %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
