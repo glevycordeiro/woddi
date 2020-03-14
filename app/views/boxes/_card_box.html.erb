@@ -1,7 +1,9 @@
 <div class="col-sm-12 col-lg-6">
   <%= link_to box_path(box) do %>
     <div class="card-product">
-      <%= image_tag box.photos.first %>
+      <% if box.photos.any? %>
+        <%= cl_image_tag box.photos.first.key %>
+      <% end %>
       <div class="card-product-infos">
         <h2><%= box.name[0..20] %></h2>
         <div class="card-product-rating">
