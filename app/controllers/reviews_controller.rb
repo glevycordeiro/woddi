@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
      authorize @review
      # raise
     if @review.save
-      redirect_to booking_reviews_path
+      redirect_to box_path(@booking.box_lesson.box_id)
     else
       flash[:alert] = "Something went wrong."
       render :new
