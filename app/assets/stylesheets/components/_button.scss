@@ -13,20 +13,9 @@
 }
 
 .btn-woddi-sm {
-  width: 20%;
-  background-color: #fe8d07;
-  border: #fe8d07;
-  font-weight: 550;
-  font-size: 0.8em;
   color: black;
-  border-radius: 6px;
-  max-width: 100%;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  display: -webkit-box;
-  display: flex;
+  background-color: $woddi;
+  border-radius: 8px;
 }
 
 @media screen and (min-width: 800px) {
@@ -43,4 +32,9 @@
 .btn-woddi:hover {
   text-decoration: none;
   color: white;
+}
+
+.btn-woddi-sm-review-location {
+  display: flex;
+  justify-content: flex-end;
 }
