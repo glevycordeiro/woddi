@@ -69,7 +69,7 @@
   padding: 17px 0px;
   border-radius: 10px;
   opacity: 0.9;
-  background-color: gray;
+  background-color: white;
 }
 
 #button_edit_profile {
@@ -79,12 +79,12 @@
   padding: 17px 0px;
   opacity: 0.9;
   border-radius: 10px;
-  background-color: gray;
+  background-color: white;
 
 
 }
 
-.modal-content {
+#userModal .modal-content {
   width: 200px;
   display: block;
   margin-left: auto;
