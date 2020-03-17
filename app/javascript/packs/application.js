@@ -11,3 +11,18 @@ initMapbox();
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+
+import { openReviewModal } from "./plugins/review-modal";
+
+openReviewModal();
+
+import { openBookingModal } from "./plugins/booking-modal";
+
+openBookingModal();
+
+import { userModal } from "./plugins/user-modal";
+
+userModal();
+
+
+

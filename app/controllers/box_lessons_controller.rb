@@ -10,6 +10,7 @@ class BoxLessonsController < ApplicationController
     else
       session[:lesson_start] = Date.today
     end
+    @booking = Booking.new
   end
 
   def new

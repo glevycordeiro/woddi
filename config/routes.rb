@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   get 'map', to: 'boxes#map', as: :map
 
-  resources :bookings, only: [:index, :destroy] do
+  resources :bookings, only: [:index, :create, :destroy] do
     resources :reviews, only: [:create]
   end
 

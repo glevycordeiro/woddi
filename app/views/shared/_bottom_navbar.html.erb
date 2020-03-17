@@ -5,28 +5,36 @@
         <li class="<%= controller_name == "boxes" && action_name == "index" ? ' active' : '' %>" >
           <%= link_to boxes_path do %>
             <i class="fas fa-list-ul fa-lg"></i>
-
           <% end %>
         </li>
-        <li class="<%= controller_name == "boxes" && action_name == "map" ? ' active' : '' %>" id="boxesmap_p">
+        <li class="<%= controller_name == "boxes" && action_name == "map" ? ' active' : '' %>" >
           <%= link_to map_path do %>
             <i class="fas fa-map-marker-alt fa-lg"></i>
-
           <% end %>
         </li>
-        <li>
+        <li class="<%= controller_name == "bookings" && action_name == "index" ? ' active' : '' %>" >
           <%= link_to bookings_path do %>
             <i class="far fa-calendar-alt fa-lg"></i>
           <% end %>
         </li>
-        <li>
-          <%= link_to "#" do %>
-            <i class="far fa-user fa-lg"></i>
-          <% end %>
+        <li class="<%= controller_name == "registrations" && action_name == "edit" ? ' active' : '' %>" id="modal">
+          <i><button type="button" class="fas fa-user fa-lg" data-toggle="modal" data-target="#userModal" id="signbutton">
+            </button></i>
         </li>
-
       </ul>
     </div>
   </nav>
-
-
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="button_sign_out"><strong>Log out</strong></button>
+       <% end %>
+      <p>
+       </p>
+      <%= link_to edit_user_registration_path do %>
+        <button type="button" class="btn btn-secondary" id="button_edit_profile"><strong>Edit your profile</strong></button>
+        <% end %>
+      </div>
+  </div>
+</div>
