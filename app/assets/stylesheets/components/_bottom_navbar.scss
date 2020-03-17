@@ -45,7 +45,57 @@
     }
   }
 
+  #signbutton {
+    text-decoration: none;
+    border: none;
+    padding: 0px 0px;
+    outline: none;
 
+  }
+
+  #bottom-list li.active {
+    i {
+      #signbutton {
+        color: $woddi;
+      }
+    }
+  }
+
+
+#button_sign_out {
+  color: $danger;
+  text-decoration: none;
+  width: 90%;
+  padding: 17px 0px;
+  border-radius: 10px;
+  opacity: 0.9;
+  background-color: gray;
+}
+
+#button_edit_profile {
+  color: $woddi;
+  text-decoration: none;
+  width: 90%;
+  padding: 17px 0px;
+  opacity: 0.9;
+  border-radius: 10px;
+  background-color: gray;
+
+
+}
+
+.modal-content {
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 280px;
+  background-color: rgba(0,0,0,0);
+  width: 40%;
+  border-radius: 0px;
+  border: none;
+
+}
 
 
 

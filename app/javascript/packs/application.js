@@ -19,3 +19,10 @@ openReviewModal();
 import { openBookingModal } from "./plugins/booking-modal";
 
 openBookingModal();
+
+import { userModal } from "./plugins/user-modal";
+
+userModal();
+
+
+
