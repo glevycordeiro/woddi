@@ -72,13 +72,16 @@
   min-height: 100vh;
   background: #7386d5;
   color: #fff;
-  transition: all 0.3s;
-  position: absolute;
+  transition: 0.7s background-color ease;
   display: none;
+  position: absolute;
 }
 
 #sidebar.active {
   width: 250px;
+  display: initial;
+  transition: 0.7s background-color ease;
+  z-index: 5;
 }
 
 #sidebar ul.components {

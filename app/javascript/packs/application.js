@@ -23,9 +23,8 @@ openBookingModal();
 import { userModal } from "./plugins/user-modal";
 
 //userModal();
-
-$(document).ready(function() {
-  $("#sidebarCollapse").on("click", function() {
-    $("#sidebar").toggleClass("active");
-  });
+const iconFilter = document.querySelector("#sidebarCollapse");
+iconFilter.addEventListener("click", event => {
+  console.log("hey");
+  document.querySelector("#sidebar").classList.toggle("active");
 });
