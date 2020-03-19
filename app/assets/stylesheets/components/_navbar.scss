@@ -52,7 +52,7 @@
 }
 
 .boxes-container {
-  margin-top: 100px;
+  padding-top: 100px;
 }
 
 .test-nav {
@@ -68,11 +68,12 @@
 }
 
 #sidebar {
+  padding: 10px;
   width: 0px;
-  min-height: 100vh;
-  background: #7386d5;
-  color: #fff;
-  transition: 0.7s background-color ease;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
   display: none;
   position: absolute;
 }
@@ -80,7 +81,7 @@
 #sidebar.active {
   width: 250px;
   display: initial;
-  transition: 0.7s background-color ease;
+  transition: all 0.7s;
   z-index: 5;
 }
 

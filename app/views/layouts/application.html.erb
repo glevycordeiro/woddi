@@ -23,7 +23,8 @@
     <%= render 'shared/flashes' %>
 
     <% if controller_name == "boxes" && (action_name == "map" || action_name == "index") %>
-    <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/sidebar' %>
     <% end %>
     <%= yield %>
     <% if action_name != "home" %>

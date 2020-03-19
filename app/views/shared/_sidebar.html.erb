@@ -1,0 +1,25 @@
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Filters</h3>
+
+      <div>
+        <i class="fa fa-times"></i>
+      </div>
+    </div>
+
+    <div>
+      <%= simple_form_for :search, url: boxes_path, method: :get do |f| %>
+        <div class="form-group">
+          <input class="form-control string required" type="text" value="<%=params[:query] %>" name="query" id="search_query" placeholder="Search by Name" />
+        </div>
+
+          <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: { class: 'review-rating' } %>
+
+        <div>
+          <%= f.submit 'Search', class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+
+    </div>
+  </nav>
