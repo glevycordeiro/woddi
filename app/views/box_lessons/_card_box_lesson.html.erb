@@ -5,7 +5,7 @@
         <h2><%= box_lesson.title[0..20] %></h2>
       </div>
       <div class="col-4 card-box-lesson-time">
-        <h2> <%= box_lesson.start_date_time.strftime('%H:%M') %></h2>
+        <h2> <%= box_lesson.start_date_time.strftime('%D %H:%M') %></h2>
       </div>
       <div class="col-4 card-box-lesson-price">
         <h2><%= box_lesson.price_cents %>€</h2>
