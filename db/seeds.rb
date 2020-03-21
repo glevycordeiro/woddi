@@ -228,7 +228,7 @@ end
 puts "Creating bookings..."
 puts "Creating reviews..."
 
-5.times do############################################500
+500.times do
   user = User.all.sample
   booking = Booking.create(user: user, status: ["Active", "Pending", "Checked-in", "Cancelled"].sample, box_lesson: BoxLesson.all.sample, student_first_name: Faker::Name.first_name, student_email: Faker::Internet.email, student_phone: Faker::PhoneNumber.phone_number_with_country_code, student_last_name: Faker::Name.last_name)
   if booking.status == "Checked-in"
