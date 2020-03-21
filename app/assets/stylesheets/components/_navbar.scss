@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: transparent;
   position: absolute;
@@ -42,7 +43,9 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.search-form-control .fa-search {
+.search-form-control .fa-search,
+.fa-filter,
+.fa-location-arrow {
   color: $woddi;
 }
 
@@ -52,4 +55,62 @@
 
 .boxes-container {
   margin-top: 100px;
+  margin-bottom: 70px;
+}
+
+.test-nav {
+  padding-top: 0px;
+  background: transparent;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+}
+
+.filter-icon {
+  margin-top: 25px;
+}
+
+#sidebar {
+  padding: 10px;
+  width: 0px;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  display: none;
+  position: absolute;
+  .br-widget {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#sidebar.active {
+  width: 250px;
+  display: initial;
+  transition: all 0.7s;
+  z-index: 5;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.side-bar-btn {
+  background-color: $woddi;
+  color: black;
+  border: $woddi;
+}
+
+/* line 14, node_modules/bootstrap/scss/mixins/_forms.scss */
+.form-control:focus {
+  border-color: $woddi;
+  box-shadow: none;
 }
