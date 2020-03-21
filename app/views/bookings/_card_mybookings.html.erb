@@ -2,7 +2,7 @@
 
     <div class="card-mybooking">
       <div class="booking-img">
-        <%= image_tag booking.box.photos.first %>
+        <%= cl_image_tag booking.box.photos.first.key, crop: :fill %>
       </div>
       <div class="card-mybooking-infos">
         <%= link_to box_path(booking.box), class: "text-decoration-none" do %>

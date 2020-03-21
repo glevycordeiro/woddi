@@ -33,10 +33,13 @@
         </div>
 
         <div class="reviews-info">
-          <p class="reviews-title"><strong>Reviews</strong></p>
-              <div class="container reviews-container">
+          <div class="title-review-average">
+            <p class="reviews-title"><strong>Reviews</strong></p>
+            <span class="number-of-reviews pt-1"><%= @box.avg_review %><i class="fas fa-star pt-1"></i> (<%= @box_reviews_count %> votes)</span>
+          </div>
+            <div class="container reviews-container">
                 <div class="row">
-                  <% @box.reviews.each do |review| %>
+                  <% @reviews.each do |review| %>
                     <%= render "card_box_review", review: review %>
                   <% end %>
                 </div>

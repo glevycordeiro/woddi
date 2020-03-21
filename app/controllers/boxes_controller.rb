@@ -33,6 +33,9 @@ class BoxesController < ApplicationController
   def show
     @booking = Booking.new
     @box = Box.find(params[:id])
+    @box_reviews_count = @box.reviews.count
+    @reviews = @box.reviews.order(created_at: :desc)
+
     authorize @box
     if params[:search].present?
       @filtered_lessons = @box.box_lessons.where("start_date >= ? AND start_date <= ?", "%#{params[:search][:date]}%", "%#{next_day}%")
