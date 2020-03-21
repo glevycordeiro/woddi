@@ -1,10 +1,10 @@
 .card-box-review {
   overflow: hidden;
-  height: 80px;
+  height: 130px;
   background: white;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   display: flex;
-  // align-items: center;
+  align-items: center;
   margin: 10px 0px;
   border-radius: 5px;
   .user-review-info {
@@ -23,14 +23,6 @@
   }
 }
 
-// .card-box-review p {
-//   font-size: 12px;
-//   line-height: 1.4;
-//   opacity: .7;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-//   color: black;
-// }
 
 .card-box-review .card-box-review-infos {
   color: black;
@@ -41,7 +33,10 @@
   align-items: center;
   .review-description {
     width: 80%;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    p {
+      margin: 0;
+    }
   }
   .review-rating-date {
     font-size: 0.9rem;
@@ -49,11 +44,15 @@
     margin-left: 8px;
   }
   .review-date {
-      font-size: 0.6rem;
-      text-align: center;
-      color: black;
-      margin-top: 20px;
+    font-size: 0.6rem;
+    text-align: center;
+    color: black;
+    margin-top: 20px;
   }
+}
+
+.fa-star {
+  color: rgb(228, 187, 37);
 }
 
 .card-box-review .card-box-review-infos .fa-star {
