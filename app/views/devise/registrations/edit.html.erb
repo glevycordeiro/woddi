@@ -57,10 +57,10 @@
                 input_html: { autocomplete: "current_password" } %>
     </div>
   <div class="form-actions">
+    <%= link_to boxes_path, method: :get do %>
     <%= f.button :submit, "Update", class: "btn btn-success" %>
-    <%= link_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
-      <%= f.button :submit, "Cancel", class: "btn btn-danger" %>
     <% end %>
+
   </div>
   <% end %>
   <div>
