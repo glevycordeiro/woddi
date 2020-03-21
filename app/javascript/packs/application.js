@@ -24,5 +24,12 @@ import { userModal } from "./plugins/user-modal";
 
 userModal();
 
+import { redirectToStripe } from "./plugins/stripe";
+
+if (document.body.dataset.controllerName == "payments" && document.body.dataset.actionName == "new") {
+  redirectToStripe();
+}
+
+
 
 

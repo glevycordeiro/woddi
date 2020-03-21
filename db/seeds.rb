@@ -22,6 +22,7 @@ Review.destroy_all
 User.destroy_all
 Box.destroy_all
 BoxLesson.destroy_all
+Order.destroy_all
 Booking.destroy_all
 
 
@@ -207,7 +208,7 @@ Box.all.each do |box|
       box_id: box.id,
       capacity: rand(1..30),
       status: true,
-      price_cents: Faker::Number.between(from: 10, to: 15),
+      price_cents: Faker::Number.between(from: 1000, to: 1500),
       title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
     )
     box_lesson.save!

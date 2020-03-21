@@ -2,14 +2,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
   include Pundit
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-
-
 
   def configure_permitted_parameters
   # For additional fields in app/views/devise/registrations/new.html.erb
@@ -24,11 +21,6 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   end
 
-
-
-
-
-
   private
 
   def skip_pundit?
@@ -36,8 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { host: "www.woddi.club" || "localhost:3000" }
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
-
 
 end
