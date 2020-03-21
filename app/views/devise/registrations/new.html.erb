@@ -29,8 +29,8 @@
         </div>
 
         <div class="form-actions sign_up_action" >
-          <a><%= f.button :submit, "Sign up", class: "btn btn-success", id: "submit-button" %></a>
-          <a><% render "devise/shared/links" %></a>
+          <%= f.button :submit, "Sign up", class: "btn btn-block btn-success", id: "submit-button" %>
+          <% render "devise/shared/links" %>
         </div>
       <% end %>
 
