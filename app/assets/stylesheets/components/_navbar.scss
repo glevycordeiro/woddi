@@ -43,7 +43,9 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.search-form-control .fa-search {
+.search-form-control .fa-search,
+.fa-filter,
+.fa-location-arrow {
   color: $woddi;
 }
 
@@ -76,6 +78,10 @@
   transition: all 0.3s;
   display: none;
   position: absolute;
+  .br-widget {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 #sidebar.active {
@@ -92,7 +98,7 @@
 
 .sidebar-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -102,7 +108,8 @@
   border: $woddi;
 }
 
-.form-group:focus {
-  border: 1px solid $woddi;
-  outline: none !important;
+/* line 14, node_modules/bootstrap/scss/mixins/_forms.scss */
+.form-control:focus {
+  border-color: $woddi;
+  box-shadow: none;
 }

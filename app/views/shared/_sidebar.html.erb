@@ -1,6 +1,6 @@
   <!-- Sidebar -->
   <nav id="sidebar">
-    <div class="sidebar-header">
+    <div class="sidebar-header mt-1">
       <h3>Filters</h3>
 
       <div id="sidebarClose">
@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="mt-4">
       <%= simple_form_for :search, url: boxes_path, method: :get do |f| %>
         <div class="form-group">
           <input class="form-control string required" type="text" value="<%=params[:query] %>" name="query" id="search_query" placeholder="Search by Name" />
@@ -16,8 +16,8 @@
 
           <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: { class: 'review-rating' } %>
 
-        <div>
-          <%= f.submit 'Search', class: "btn btn-primary btn-block side-bar-btn" %>
+        <div class="mt-4">
+          <%= f.submit 'Search', class: "btn btn-success btn-block side-bar-btn" %>
         </div>
       <% end %>
 
