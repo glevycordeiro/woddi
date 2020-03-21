@@ -89,3 +89,20 @@
   padding: 20px 0;
   border-bottom: 1px solid #47748b;
 }
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.side-bar-btn {
+  background-color: $woddi;
+  color: black;
+  border: $woddi;
+}
+
+.form-group:focus {
+  border: 1px solid $woddi;
+  outline: none !important;
+}

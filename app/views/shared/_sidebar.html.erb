@@ -3,7 +3,7 @@
     <div class="sidebar-header">
       <h3>Filters</h3>
 
-      <div>
+      <div id="sidebarClose">
         <i class="fa fa-times"></i>
       </div>
     </div>
@@ -17,7 +17,7 @@
           <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: { class: 'review-rating' } %>
 
         <div>
-          <%= f.submit 'Search', class: "btn btn-primary btn-block" %>
+          <%= f.submit 'Search', class: "btn btn-primary btn-block side-bar-btn" %>
         </div>
       <% end %>
 

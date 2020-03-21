@@ -23,8 +23,7 @@ openBookingModal();
 import { userModal } from "./plugins/user-modal";
 
 userModal();
-const iconFilter = document.querySelector("#sidebarCollapse");
-iconFilter.addEventListener("click", event => {
-  console.log("hey");
-  document.querySelector("#sidebar").classList.toggle("active");
-});
+
+import { openSideBar } from "../plugins/sidebar";
+
+openSideBar();
