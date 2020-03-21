@@ -3,19 +3,15 @@ class BoxesController < ApplicationController
 
   def index
     if params[:query].present?
-      @boxes = policy_scope(Box.where("title ILIKE ?", "%#{params[:query]}%"))
+      @boxes = policy_scope(Box.where("name ILIKE ?", "%#{params[:query]}%"))
     else
       @boxes = policy_scope(Box).all
     end
-
-    @boxes = Box.geocoded #returns flats with coordinates
-
-    @markers = @boxes.map do |box|
-      {
-        lat: box.latitude,
-        lng: box.longitude
-      }
+    if params[:search] &&
+      params[:search][:rating].present?
+      @boxes = @boxes.select{|box| box.avg_review.to_s == params[:search][:rating]}
     end
+    
   end
 
   def map
@@ -37,6 +33,9 @@ class BoxesController < ApplicationController
   def show
     @booking = Booking.new
     @box = Box.find(params[:id])
+    @box_reviews_count = @box.reviews.count
+    @reviews = @box.reviews.order(created_at: :desc)
+
     authorize @box
     if params[:search].present?
       @filtered_lessons = @box.box_lessons.where("start_date >= ? AND start_date <= ?", "%#{params[:search][:date]}%", "%#{next_day}%")

@@ -1,66 +1,67 @@
 // mobile bottom shortcut navbar
-​ .flex-container{
+​ .flex-container {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
 }
-  #bottom-nav {
+#bottom-nav {
   z-index: 9999;
-    text-align: center;
-    font-size: 90%;
-    color: white;
-    padding: 0;
-    box-shadow: -1% 0% 1% 1% gray;
-    display: flex;
-    position: fixed;
-    width: 100%;
-    background: white;
-    left: 0;
-    bottom: 0%;
+  text-align: center;
+  font-size: 90%;
+  color: white;
+  padding: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background: white;
+  left: 0;
+  bottom: 0%;
+}
+​ #bottom-nav,
+#bottom-list {
+  display: flex;
+  padding: 0%;
+  margin-bottom: 0;
+  justify-content: space-between;
+  li {
+    padding: 30px;
 
-  }
-​
-  #bottom-nav, #bottom-list {
-    display: flex;
-    padding: 0%;
-    margin-bottom: 0;
-    justify-content: space-between;
-    li {
-      padding: 30px;
-
-
-      i {
-        color: $gray;
-      }
-    }
-  }
-​
-  #bottom-list {
-
-  }
-
-  #bottom-list li.active {
     i {
-        color: $woddi;
+      color: $gray;
     }
   }
+}
+​ #bottom-list {
+}
 
-  #signbutton {
-    text-decoration: none;
-    border: none;
-    padding: 0px 0px;
-    outline: none;
-
+#bottom-list li.active {
+  i {
+    color: $woddi;
   }
+}
 
-  #bottom-list li.active {
-    i {
-      #signbutton {
-        color: $woddi;
-      }
+#signbutton {
+  text-decoration: none;
+  border: none;
+  padding: 0px 0px;
+  outline: none;
+}
+
+#signbutton_s_out {
+  text-decoration: none;
+  border: none;
+  padding: 0px 0px;
+  outline: none;
+}
+
+#bottom-list li.active {
+  i {
+    #signbutton {
+      color: $woddi;
     }
   }
-
+}
 
 #button_sign_out {
   color: $danger;
@@ -80,8 +81,6 @@
   opacity: 0.9;
   border-radius: 10px;
   background-color: white;
-
-
 }
 
 #userModal .modal-content {
@@ -90,12 +89,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 280px;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   width: 40%;
   border-radius: 0px;
   border: none;
-
 }
-
-
-
