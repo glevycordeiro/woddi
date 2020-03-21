@@ -17,10 +17,10 @@
         <div id="modal-price">
 
         </div>
-        <%= simple_form_for(booking) do |f| %>
-          <%= f.input :box_lesson_id, as: :hidden %>
+        <%= simple_form_for(Order.new, url: orders_path, method: :post) do |f| %>
+          <%= f.input :box_lesson, as: :hidden %>
           <div class="btn-woddi-sm-review-location">
-            <%= f.submit :Submit, value: "Book", class: "btn btn-woddi-sm" %>
+            <%= f.submit "Book", class: "btn btn-woddi-sm" %>
           </div>
         <% end %>
       </div>
