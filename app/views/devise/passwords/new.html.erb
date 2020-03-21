@@ -1,18 +1,27 @@
-<h2>Forgot your password?</h2>
+<div class="container sign_up_container">
+  <div class="row center-form" >
+    <div class="col-sm-4 col-sm-offset-4">
+      <h2 class="login-title">Forgot your password?</h2>
+      <div class="enter-woddi-email-info">
+        <h6>Enter the email address associated with your <strong>Woddi</strong> account</h6>
+      </div>
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+        </div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+        <div class="form-actions">
+          <%= f.button :submit, "Reset password", class: "btn btn-block btn-success" %>
+        </div>
+      <% end %>
+      <div class= "member">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
