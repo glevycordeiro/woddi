@@ -75,8 +75,25 @@
 }
 
 .btn-success {
-  background-color: $green;
+  background-color: $woddi;
+  color: white;
+  border-color: $woddi;
+  width: 100%;
+
 }
+.btn-success:hover {
+  color: #fff;
+  background-color: $woddi;
+  border-color: $woddi;
+}
+
+.btn-success:focus, .btn-success.focus {
+  color: #fff;
+  background-color: $woddi;
+  border-color: $woddi;
+  box-shadow: 0 0 0 0.2rem rgba(30, 193, 122, 0.5);
+}
+
 
 .btn-danger {
   background-color: $red;
