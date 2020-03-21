@@ -1,3 +1,16 @@
+<div class="test-nav container">
+<div class="row no-gutters">
+<% if controller_name == "boxes" && (action_name == "index") %>
+<div class="col-1">
+
+  <div id="sidebarCollapse" >
+    <i class="fas fa-filter filter-icon"></i>
+  </div>
+
+</div>
+  <% end %>
+
+<div class="col-11">
 <div class="navbar navbar-expand navbar-light navbar-lewagon">
 <%= simple_form_for :search, url: map_path, method: :get do |f| %>
   <div class="search-form-control form-group">
@@ -9,4 +22,14 @@
 <% end %>
 
 </div>
+
+</div>
+<% if controller_name == "boxes" && (action_name == "map") %>
+<div class="col-1">
+<i class="fas fa-location-arrow filter-icon"></i>
+</div>
+  <% end %>
+  </div>
+</div>
+
 
