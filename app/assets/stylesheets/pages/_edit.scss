@@ -91,7 +91,18 @@
   color: #fff;
   background-color: $woddi;
   border-color: $woddi;
-  box-shadow: 0 0 0 0.2rem rgba(30, 193, 122, 0.5);
+  box-shadow: 0 0 0 0.2rem $woddi;
+}
+
+
+
+
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+  color: #fff;
+  background-color: $woddi;
+  border-color: $woddi;
+  box-shadow: 0 0 0 0.2rem $woddi;
 }
 
 
