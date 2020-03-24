@@ -20,10 +20,10 @@ file = URI.open('https://res.cloudinary.com/woddi/image/upload/v1581782638/Showt
 # filename = File.basename(URI.parse(url).path)
 
 Review.destroy_all
+Order.destroy_all
 User.destroy_all
 Box.destroy_all
 BoxLesson.destroy_all
-Order.destroy_all
 Booking.destroy_all
 
 
