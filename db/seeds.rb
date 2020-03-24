@@ -23,6 +23,7 @@ Review.destroy_all
 User.destroy_all
 Box.destroy_all
 BoxLesson.destroy_all
+Order.destroy_all
 Booking.destroy_all
 
 

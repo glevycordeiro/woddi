@@ -4,7 +4,7 @@ function openBookingModal() {
   elements.forEach((element) => {
     element.addEventListener('click', (event) => {
       const boxLessonId = element.dataset.boxLessonId;
-      const injectingBoxLessonId = document.getElementById("booking_box_lesson_id");
+      const injectingBoxLessonId = document.getElementById("order_box_lesson");
       injectingBoxLessonId.value = boxLessonId;
 
       const boxName = element.dataset.boxName;
@@ -17,7 +17,7 @@ function openBookingModal() {
 
       const boxLessonPriceCents = element.dataset.boxLessonPriceCents;
       const injectingBoxLessonPriceCents = document.getElementById("modal-price");
-      injectingBoxLessonPriceCents.innerHTML = boxLessonPriceCents;
+      injectingBoxLessonPriceCents.innerHTML = parseFloat(boxLessonPriceCents)/100 + "€";
 
       const targetHiddenModalButton = document.getElementById("create-booking-modal-hidden-button");
       targetHiddenModalButton.click();

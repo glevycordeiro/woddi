@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <div>
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+      <button data-stripe-publishabled-key-id="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>" data-stripe-session-id="<%= @order.checkout_session_id %>" id="pay" class="btn btn-primary" style="display: none">Pay</button>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @order.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>

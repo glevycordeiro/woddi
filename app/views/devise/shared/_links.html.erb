@@ -1,11 +1,18 @@
-<%- if controller_name != 'sessions' %>
+<%- if controller_name != 'sessions' && controller_name != 'passwords' %>
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end %>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+<%- if devise_mapping.registerable? && controller_name != 'registrations' && controller_name != 'passwords' %>
 
   <%= link_to "Sign up", new_registration_path(resource_name), style: "color: grey" %><br />
 
+<% end %>
+
+<%- if controller_name == 'passwords' %>
+  <div style="margin-top: 10px; margin-left: 15px">
+    <%= link_to "Back to log in", new_session_path(resource_name), style: "color: grey" %><br />
+    <%= link_to "Go to sign up", new_registration_path(resource_name), style: "color: grey" %><br />
+  </div>
 <% end %>
 
 
