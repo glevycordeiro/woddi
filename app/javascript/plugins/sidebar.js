@@ -1,15 +1,19 @@
 const openSideBar = () => {
   const iconFilter = document.querySelector("#sidebarCollapse");
-  iconFilter.addEventListener("click", event => {
-    console.log("hey");
-    document.querySelector("#sidebar").classList.toggle("active");
-  });
+
+  if (iconFilter) {
+    iconFilter.addEventListener("click", event => {
+      document.querySelector("#sidebar").style.left = "0px";
+    });
+  }
 
   const sidenarClose = document.querySelector("#sidebarClose");
-  sidenarClose.addEventListener("click", event => {
-    console.log("hey");
-    document.querySelector("#sidebar").classList.toggle("active");
-  });
+
+  if (sidenarClose) {
+    sidenarClose.addEventListener("click", event => {
+      document.querySelector("#sidebar").style.left = "-260px";
+    });
+  }
 };
 
 export { openSideBar };
