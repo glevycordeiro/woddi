@@ -75,8 +75,6 @@ puts "Uploading avatar photos..."
 # avatar_5 = URI.open('https://res.cloudinary.com/woddi/image/upload/v1583590374/WODDI/user-profile-computer-icons-girl-customer-avatar_kpmyne.jpg')
 # User.all.sample.attach(io: avatar_5, filename: 'user-profile-computer-icons-girl-customer-avatar_kpmyne.jpg', content_type: 'image/jpg')
 
-require 'byebug'
-
 puts 'Creating boxes...'
 
 filepath = "#{Rails.root}/db/boxes.json"
@@ -215,7 +213,7 @@ Box.all.each do |box|
         box_id: box.id,
         capacity: rand(1..30),
         status: true,
-        price_cents: Faker::Number.between(from: 10, to: 15)*100,
+        price_cents: Faker::Number.between(from: 1000, to: 1500),
         title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
       )
     p box_lesson
