@@ -10,7 +10,7 @@
       <div class="modal-body">
         <%= simple_form_for([booking, review]) do |f| %>
           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { class: 'review-rating' } %>
-          <%= f.input :description, label: "Drop down a line (Optional)", class: "review-write" %>
+          <%= f.input :description, label: "Drop down a line (Optional)", input_html: { maxlength: 90 }, class: "review-write" %>
           <div class="btn-woddi-sm-review-location">
             <%= f.submit :Submit, class: "btn btn-woddi-sm" %>
           </div>

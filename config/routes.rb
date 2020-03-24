@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   end
 
   get "cancelled", to: 'bookings#cancelled', as: "cancelled"
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
