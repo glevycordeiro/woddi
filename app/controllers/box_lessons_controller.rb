@@ -2,10 +2,10 @@ class BoxLessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @box_lessons = policy_scope(BoxLesson).where("start_date_time > ?", Time.now.utc).order(start_date_time: :asc)
     @box = Box.find(params["box_id"])
+    @box_lessons = policy_scope(BoxLesson).where(box: @box).where("start_date_time > ?", Time.now.utc).order(start_date_time: :asc)
     if params[:lesson_start] != nil && params[:lesson_start] != ""
-      @box_lessons = @box_lessons.where("date(box_lessons.start_date_time) = ?", params[:lesson_start].to_date)
+      @box_lessons = @box_lessons.where(box: @box).where("date(box_lessons.start_date_time) = ?", params[:lesson_start].to_date)
       session[:lesson_start] = params[:lesson_start]
     else
       session[:lesson_start] = Date.today

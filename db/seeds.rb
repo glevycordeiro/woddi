@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -42,6 +43,7 @@ puts 'Creating users...'
 # end
 
 100.times do
+
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, dob: Faker::Date.birthday(min_age: 18, max_age: 65), email: Faker::Internet.email, password: "123456")
 end
 user_1 = User.create(first_name: "Ana", last_name: "Lopes", dob: "01/06/1989", email: "woddi@gmail.com", password: "123456")
@@ -200,19 +202,28 @@ end
 puts "Creating classes for each box..."
 
 Box.all.each do |box|
-  100.times do
-    start_date = Faker::Time.between(from: DateTime.now, to: DateTime.now + 100.days)
-    box_lesson = BoxLesson.new(
-      start_date_time: start_date,
-      end_date_time: start_date + (60*60),
-      box_id: box.id,
-      capacity: rand(1..30),
-      status: true,
-      price_cents: Faker::Number.between(from: 1000, to: 1500),
-      title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
-    )
+  date = DateTime.new(2020,4,1,5,0,0)
+  count = 0
+  10.times do
+    8.times do
+      date += 2.hour
+      p date
+      box_lesson = BoxLesson.new(
+        start_date_time: date,
+        end_date_time: date + 1.hour,
+        box_id: box.id,
+        capacity: rand(1..30),
+        status: true,
+        price_cents: Faker::Number.between(from: 10, to: 15),
+        title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
+      )
+    p box_lesson
     box_lesson.save!
+
   end
+  count += 1
+  date = DateTime.new(2020,4,1,5,0,0)+count.day
+end
 end
 
 puts "Creating bookings..."
