@@ -213,7 +213,7 @@ Box.all.each do |box|
         box_id: box.id,
         capacity: rand(1..30),
         status: true,
-        price_cents: Faker::Number.between(from: 1000, to: 1500),
+        price_cents: Faker::Number.between(from: 10, to: 15)*100,
         title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
       )
     p box_lesson
