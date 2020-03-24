@@ -200,6 +200,7 @@ end
 puts "Creating classes for each box..."
 
 Box.all.each do |box|
+
   date = DateTime.new(2020,4,1,5,0,0)
   count = 0
   10.times do
@@ -212,7 +213,7 @@ Box.all.each do |box|
         box_id: box.id,
         capacity: rand(1..30),
         status: true,
-        price_cents: Faker::Number.between(from: 10, to: 15),
+        price_cents: Faker::Number.between(from: 10, to: 15)*100,
         title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample
       )
     p box_lesson
