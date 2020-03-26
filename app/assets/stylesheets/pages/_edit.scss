@@ -16,14 +16,17 @@
 
 .container_edit {
  background-color: $light-gray;
- // margin-top: 20px;
- margin-bottom: 20px;
- padding-bottom: 20px;
+ margin-top: 30px;
+ //margin-bottom: 20px;
+ //padding-bottom: 20px;
  justify-content: center;
  font-size: 14px;
+ height: 40px;
 }
-.user-edit-title {
-  text-align: center;
+.form-inputs {
+  height: 40px;
+
+
   // padding-top: 16px;
 }
 
@@ -47,7 +50,7 @@
   align-items: center;
   justify-content: center;
   width: 20%;
-  font-size: 3px;
+  font-size: 30px;
 }
 
 .image_wrapper {
@@ -56,7 +59,8 @@
 }
 
 .lower-part {
-  width: 100%;
+  //width: 100%;
+
 
 }
 
@@ -106,10 +110,7 @@
 }
 
 
-.btn-danger {
-  background-color: $red;
 
-}
 
 
 
