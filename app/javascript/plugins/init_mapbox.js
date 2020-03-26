@@ -20,13 +20,22 @@ const initMapbox = () => {
     markers.forEach(marker => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
-      new mapboxgl.Marker({color: "#FF8D06"})
+      new mapboxgl.Marker({ color: "#FF8D06" })
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup) // add this
         .addTo(map);
     });
 
     fitMapToMarkers(map, markers);
+
+    document
+      .getElementById("navigateCurrentLocation")
+      .addEventListener("click", function() {
+        map.fitBounds([
+          [32.958984, -5.353521],
+          [43.50585, 5.615985]
+        ]);
+      });
   }
 };
 

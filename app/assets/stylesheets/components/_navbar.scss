@@ -44,7 +44,7 @@
 }
 
 .search-form-control .fa-search,
-.fa-filter,
+.fa-sliders-h,
 .fa-location-arrow {
   color: $woddi;
 }
@@ -54,7 +54,7 @@
 }
 
 .boxes-container {
-  margin-top: 100px;
+  padding-top: 100px;
   margin-bottom: 70px;
 }
 
@@ -67,29 +67,23 @@
 }
 
 .filter-icon {
-  margin-top: 25px;
+  margin-top: 27px;
 }
 
 #sidebar {
   padding: 10px;
-  width: 0px;
+  width: 250px;
+  left: -260px;
   height: 100vh;
   background: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
-  display: none;
+  transition: all 0.5s;
   position: absolute;
+  z-index: 5;
   .br-widget {
     display: flex;
     justify-content: space-between;
   }
-}
-
-#sidebar.active {
-  width: 250px;
-  display: initial;
-  transition: all 0.7s;
-  z-index: 5;
 }
 
 #sidebar ul.components {
