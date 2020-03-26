@@ -32,8 +32,8 @@ const initMapbox = () => {
       .getElementById("navigateCurrentLocation")
       .addEventListener("click", function() {
         map.fitBounds([
-          [32.958984, -5.353521],
-          [43.50585, 5.615985]
+          [-9.1436407, 38.7276493],
+          [-9.161388, 38.760999]
         ]);
       });
   }
