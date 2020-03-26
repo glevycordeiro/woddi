@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
   def create
     box_lesson = BoxLesson.find(params[:order][:box_lesson])
-    order = Order.create!(box_lesson: box_lesson, amount: box_lesson.price, state: 'pending', user: current_user)
+    booking = Booking.create!(user: current_user, status: "Active", box_lesson: box_lesson)
+    order = Order.create!(booking: booking, box_lesson: box_lesson, amount: box_lesson.price, state: 'pending', user: current_user)
     authorize order
 
     session = Stripe::Checkout::Session.create(

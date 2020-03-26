@@ -3,6 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :box_lesson
   has_one :box, through: :box_lesson
   has_one :review, dependent: :destroy
+  has_one :order, dependent: :destroy
+
 
   # after_create :update_capacity
   # validate :is_sold_out?
@@ -10,6 +12,10 @@ class Booking < ApplicationRecord
 
   STATUSES = ["Active", "Checked-in", "Cancelled", "Pending"]
   validates :status, inclusion: { in: STATUSES }
+
+  def paid?
+    self.order && self.order.state == "paid"
+  end
 
 #   private
 

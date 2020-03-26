@@ -7,7 +7,14 @@
   margin: 20px;
   border-radius: 5px;
   justify-content: space-between;
+  &.border-green {
+    border-right: 5px solid $green;
+  }
+  &.border-red {
+    border-right: 5px solid $red;
+  }
 }
+
 .booking-img {
   width: 40%;
 }
@@ -37,6 +44,10 @@
       margin-bottom: 0;
       margin-top: 8px;
       color: black;
+    }
+    .time-and-status {
+      display: flex;
+      justify-content: space-between;
     }
 }
 .btn-box {

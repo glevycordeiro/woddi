@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   #before_action :check_if_redeem
 
   def index
-    @bookings = policy_scope(Booking).includes(:box_lesson).order("box_lessons.start_date_time")
+    @bookings = policy_scope(Booking).where(user: current_user).includes(:box_lesson).order("box_lessons.start_date_time")
     @review = Review.new
   end
 
