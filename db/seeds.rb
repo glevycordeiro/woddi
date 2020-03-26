@@ -211,7 +211,7 @@ Box.all.each do |box|
         start_date_time: date,
         end_date_time: date + 1.hour,
         box_id: box.id,
-        capacity: rand(1..30),
+        capacity: rand(10..30),
         status: true,
         price_cents: Faker::Number.between(from: 10, to: 15)*100,
         title: ["WOD", "Gymnastics", "Weightlifting", "Open Box"].sample

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_205402) do
+ActiveRecord::Schema.define(version: 2020_03_26_193211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,8 @@ ActiveRecord::Schema.define(version: 2020_03_17_205402) do
     t.bigint "box_lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_orders_on_booking_id"
     t.index ["box_lesson_id"], name: "index_orders_on_box_lesson_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -120,6 +122,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_205402) do
   add_foreign_key "bookings", "box_lessons"
   add_foreign_key "bookings", "users"
   add_foreign_key "box_lessons", "boxes"
+  add_foreign_key "orders", "bookings"
   add_foreign_key "orders", "box_lessons"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "bookings"
