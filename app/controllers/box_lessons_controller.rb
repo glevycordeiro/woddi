@@ -5,7 +5,7 @@ class BoxLessonsController < ApplicationController
     @box = Box.find(params["box_id"])
     @box_lessons = policy_scope(BoxLesson).where(box: @box).where("date(box_lessons.start_date_time) = ?", Date.today).order(start_date_time: :asc)
     if params[:lesson_start] != nil && params[:lesson_start] != ""
-      @box_lessons = @box_lessons.where(box: @box).where("date(box_lessons.start_date_time) = ?", params[:lesson_start].to_date)
+      @box_lessons = policy_scope(BoxLesson).where(box: @box).where("date(box_lessons.start_date_time) = ?", params[:lesson_start].to_date)
       session[:lesson_start] = params[:lesson_start]
     else
       session[:lesson_start] = Date.today

@@ -211,9 +211,9 @@ puts "Creating classes for each box..."
 
 Box.all.each do |box|
 
-  date = DateTime.new(2020,3,1,5,0,0)
+  date = DateTime.new(2020,3,28,5,0,0)
   count = 0
-  100.times do
+  20.times do
     8.times do
       date += 2.hour
       p date
@@ -231,7 +231,7 @@ Box.all.each do |box|
 
   end
   count += 1
-  date = DateTime.new(2020,3,1,5,0,0)+count.day
+  date = DateTime.new(2020,3,28,5,0,0)+count.day
 end
 end
 
