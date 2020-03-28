@@ -13,7 +13,7 @@
             <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { class: 'review-rating' } %>
             <%= f.input :description, label: "Drop down a line (Optional)", input_html: { maxlength: 90 }, class: "review-write" %>
             <div class="btn-woddi-sm-review-location">
-              <%= f.submit :Submit, class: "btn btn-woddi-sm" %>
+              <%= f.submit :Submit, class: "btn btn-block btn-woddi-sm" %>
             </div>
           <% end %>
         </div>

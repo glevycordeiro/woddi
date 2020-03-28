@@ -11,16 +11,18 @@
         <div id="modal-box-name">
 
         </div>
+        <div class="align-modal">
         <div id="modal-start-date-time">
 
         </div>
         <div id="modal-price">
 
         </div>
+        </div>
         <%= simple_form_for(Order.new, url: orders_path, method: :post) do |f| %>
           <%= f.input :box_lesson, as: :hidden %>
           <div class="btn-woddi-sm-review-location">
-            <%= f.submit "Book", class: "btn btn-woddi-sm" %>
+            <%= f.submit "Book", class: "btn btn-block btn-woddi-sm" %>
           </div>
         <% end %>
       </div>
