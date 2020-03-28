@@ -1,7 +1,9 @@
 <div class="col-sm-12 col-lg-6">
   <div class="card-box-review">
     <div class="user-review-info">
-      <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+      <div class="avatar-text bg-<%= review.user.first_name[0].downcase if review.user.first_name %>">
+       <%= review.user.first_name[0] if review.user.first_name %>
+      </div>
       <div class="user-name-review">
       <%= review.user.first_name %> <%= review.user.last_name %>
       </div>
