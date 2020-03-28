@@ -9,12 +9,101 @@
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
 .avatar-square {
   width: 40px;
   border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
+}
+
+.avatar-text {
+  width: 2.35em;
+  line-height: 2.35em;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 1000px;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.bg-a {
+  background-color: #dae0e2;
+}
+.bg-b {
+  background-color: #eed3c1;
+}
+.bg-c {
+  background-color: #d9f8f7;
+}
+.bg-d {
+  background-color: #f1cee7;
+}
+.bg-e {
+  background-color: #c4e3e4;
+}
+.bg-f {
+  background-color: #bbefda;
+}
+.bg-g {
+  background-color: #bdbded;
+}
+.bg-h {
+  background-color: #ceb9cd;
+}
+.bg-i {
+  background-color: #eab7be;
+}
+.bg-j {
+  background-color: #f9e5be;
+}
+.bg-k {
+  background-color: #fac5cc;
+}
+.bg-l {
+  background-color: #fed4bc;
+}
+.bg-m {
+  background-color: #d6f4e9;
+}
+.bg-n {
+  background-color: #c0d4f7;
+}
+.bg-o {
+  background-color: #f9edd7;
+}
+.bg-p {
+  background-color: #dfcc8f;
+}
+.bg-q {
+  background-color: #c1c7cc;
+}
+.bg-r {
+  background-color: #bcb2b3;
+}
+.bg-s {
+  background-color: #edc183;
+}
+.bg-t {
+  background-color: #b9a550;
+}
+.bg-u {
+  background-color: #b9a9a2;
+}
+.bg-v {
+  background-color: #cf5530;
+}
+.bg-w {
+  background-color: #f59b45;
+}
+.bg-x {
+  background-color: #8a856e;
+}
+.bg-y {
+  background-color: #8a6f64;
+}
+.bg-z {
+  background-color: #e63a2a;
 }

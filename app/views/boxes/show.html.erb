@@ -1,7 +1,7 @@
 <div class="container">
   <div class="box-page-container">
     <div class="box-header">
-      <h1><%= @box.name %></h1>
+      <h1 title="<%= @box.name %>"><%= @box.name[0..15] %></h1>
       <%= link_to "BOOK", box_box_lessons_path(@box), class: "btn-book" %>
     </div>
       <div class="box-photos">
