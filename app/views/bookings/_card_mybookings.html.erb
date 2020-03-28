@@ -1,6 +1,12 @@
 <div class="col-sm-12 col-lg-6">
-
-    <div class="card-mybooking <%= booking.status == "Active" && booking.paid? ? 'border-green' : 'border-red' %>">
+    <% if booking.status == "Active" && booking.paid? %>
+      <% @border = 'border-green' %>
+    <% elsif booking.status == "Active" %>
+      <% @border = 'border-red' %>
+    <% else %>
+      <%= @border = '' %>
+    <% end %>
+    <div class="card-mybooking <%= @border %>">
       <div class="booking-img">
         <%= cl_image_tag booking.box.photos.first.key, crop: :fill %>
       </div>
@@ -12,7 +18,7 @@
             <p><%= booking.box_lesson.start_date_time.strftime('%d/%m/%y') %> <%= booking.box_lesson.start_date_time.strftime('%H:%M') %> </p>
             <% if booking.status == "Active" && booking.paid? %>
               <p class="text-success"><strong>Paid</strong></p>
-            <% else %>
+            <% elsif booking.status == "Active" %>
               <p class="text-danger"><strong>Pending</strong></p>
             <% end %>
           </div>
