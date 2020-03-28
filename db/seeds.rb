@@ -84,6 +84,14 @@ url = "https://www.crossfit.com/cf/find-a-box.php?page=1&country=PT&state=&city=
 response = open(url).read
 data = JSON.parse(response)
 
+random_photos = ['https://res.cloudinary.com/woddi/image/upload/v1583576510/WODDI/images_b7993t.jpg',
+                 'https://res.cloudinary.com/woddi/image/upload/v1583576497/WODDI/crossfit_seeyt1.jpg',
+                 'https://res.cloudinary.com/woddi/image/upload/v1583576026/WODDI/crossfit_jxsgji.jpg',
+                 'https://res.cloudinary.com/woddi/image/upload/v1583575986/WODDI/big_1_20190619150826_kbibl0.jpg',
+                 'https://res.cloudinary.com/woddi/image/upload/v1583443616/WODDI/siglas-do-crossfit1_agsvkn.jpg',
+                 'https://res.cloudinary.com/woddi/image/upload/v1583443606/WODDI/22_whzzuz.jpg',
+                 'https://res.cloudinary.com/woddi/image/upload/v1583443578/WODDI/thumbs.web.sapo.io_lhbz57.jpg']
+
 data["affiliates"][0..20].each do |affiliate|
   pp affiliate
   box = Box.new(
@@ -101,6 +109,8 @@ data["affiliates"][0..20].each do |affiliate|
 
   photo_1 = URI.open(affiliate["photo"])
   box.photos.attach(io: photo_1, filename: "image_box_#{affiliate['name']}.jpg", content_type: 'image/jpg')
+  photo_2 = URI.open(random_photos.sample)
+  box.photos.attach(io: photo_2, filename: "image_box_#{affiliate['name']}2.jpg", content_type: 'image/jpg')
 
   # {"status"=>"0",
   #  "photo"=>"https://profilepicsbucket.crossfit.com/pukie.png",
