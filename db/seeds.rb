@@ -128,10 +128,9 @@ matchbox.photos.attach(io: photo_matchbox, filename: "Matchbox-Crossfit-Logo", c
 puts "Creating classes for each box..."
 
 Box.all.each do |box|
-
-  date = Date.today #Time.new(2020,3,28,5,0,0)
+  date = DateTime.new(2020,3,28,5,0,0)
   count = 0
-  10.times do
+  20.times do
     8.times do
       date += 2.hour
       p date
@@ -150,6 +149,8 @@ Box.all.each do |box|
     count += 1
     date = date + count.day
   end
+  count += 1
+  date = DateTime.new(2020,3,28,5,0,0)+count.day
 end
 
 puts "Creating bookings..."
