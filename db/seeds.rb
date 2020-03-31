@@ -128,12 +128,12 @@ matchbox.photos.attach(io: photo_matchbox, filename: "Matchbox-Crossfit-Logo", c
 puts "Creating classes for each box..."
 
 Box.all.each do |box|
-  date = DateTime.new(2020,3,28,5,0,0)
-  count = 0
-  20.times do
-    8.times do
-      date += 2.hour
-      p date
+  date = DateTime.new(2020,4,3,13,0,0)
+  # date = DateTime.now
+  # count = 0
+  10.times do
+    5.times do
+      # date += 2.hour
       box_lesson = BoxLesson.new(
         start_date_time: date,
         end_date_time: date + 1.hour,
@@ -145,12 +145,12 @@ Box.all.each do |box|
       )
       #p box_lesson
       box_lesson.save!
+      date = date + 1.hour
     end
-    count += 1
-    date = date + count.day
+    # count += 1
+    date = date + 19.hour
+    # date = date + count
   end
-  count += 1
-  date = DateTime.new(2020,3,28,5,0,0)+count.day
 end
 
 puts "Creating bookings..."
@@ -158,6 +158,11 @@ puts "Creating bookings..."
 
 puts "Creating reviews..."
 matchbox_booking = Booking.create(user: user_goncalo, status: "Checked-in", box_lesson: matchbox.box_lessons.where('start_date_time < ?', Date.today).sample , student_first_name: "Gonçalo", student_email: "gc@gmail.com", student_phone: Faker::PhoneNumber.phone_number_with_country_code, student_last_name: "Cordeiro")
+
+reviews_array = ["Awesome", "Great showers", "Top-notch instructors", "People are extremely friendly", "A wondeful experience", "Fenomenal", "I wonder why CrossFit is so expensive...", "Simply trash"]
+n1 = 2
+n2 = rand(4..5)
+array_n = [n1, n2]
 
 # past = Dete.new(2020, 03, 15)
 # today = Date.today
@@ -173,7 +178,7 @@ BoxLesson.all.each do |bl|
   user = User.all.sample
   booking = Booking.create(user: user, status: ["Active", "Pending", "Checked-in", "Cancelled"].sample, box_lesson: bl, student_first_name: Faker::Name.first_name, student_email: Faker::Internet.email, student_phone: Faker::PhoneNumber.phone_number_with_country_code, student_last_name: Faker::Name.last_name)
   if booking.status == "Checked-in"
-    Review.create(description: Faker::TvShows::FamilyGuy.quote, rating: rand(1..5), booking: booking, created_at: (DateTime.now - rand(1..31).days))
+    Review.create(description: reviews_array.sample, rating: array_n.sample, booking: booking, created_at: (DateTime.now - rand(1..31).days))
   end
 end
 

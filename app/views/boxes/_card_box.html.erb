@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-lg-6">
-  <%= link_to box_path(box) do %>
+  <%= link_to box_path(box), class: "no-text-decoration" do %>
     <div class="card-product">
       <% if box.photos.any? %>
         <%= cl_image_tag box.photos.first.key %>

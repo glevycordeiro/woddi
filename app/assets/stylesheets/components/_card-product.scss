@@ -10,6 +10,7 @@
 }
 
 .card-product img {
+  width: 25%;
   object-fit: cover;
   height: 100%;
 }
@@ -41,3 +42,11 @@
 .card-product .card-product-infos .fa-star {
   color: rgb(228, 187, 37);
 }
+
+.no-text-decoration {
+  text-decoration: none !important;
+}
+
+// .no-text-decoration:active! {
+//   text-decoration: none;
+// }
