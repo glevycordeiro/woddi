@@ -22,7 +22,7 @@ openBookingModal();
 
 import { userModal } from "./plugins/user-modal";
 
-userModal();
+// userModal();
 
 import { redirectToStripe } from "./plugins/stripe";
 
