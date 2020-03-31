@@ -78,7 +78,7 @@
   background: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.5s;
-  position: absolute;
+  position: fixed;
   z-index: 5;
   .br-widget {
     display: flex;

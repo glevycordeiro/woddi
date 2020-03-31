@@ -33,3 +33,7 @@ if (document.body.dataset.controllerName == "payments" && document.body.dataset.
 import { openSideBar } from "../plugins/sidebar";
 
 openSideBar();
+
+import { iconColorSwitch } from "./plugins/icon-color-switch";
+
+iconColorSwitch();
